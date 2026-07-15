@@ -145,7 +145,7 @@ p.section-lede {
 }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 34px; width: auto; }
+.brand img { height: 34px; width: auto; transform: rotate(-25deg); }
 .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
 
 .main-nav { display: none; }
@@ -374,7 +374,7 @@ p.section-lede {
   box-shadow: var(--shadow-sm);
 }
 @media (min-width: 640px) { .gallery-strip { grid-auto-columns: 38%; } }
-@media (min-width: 1080px) { .gallery-strip { grid-auto-columns: 23%; overflow-x: visible; } }
+@media (min-width: 1080px) { .gallery-strip { grid-auto-columns: 23%; } }
 
 /* ---------- Split section (About / Story) ---------- */
 .split {
