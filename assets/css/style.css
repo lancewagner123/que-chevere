@@ -145,7 +145,7 @@ p.section-lede {
 }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 34px; width: auto; transform: rotate(-25deg); }
+.brand img { height: 34px; width: auto; }
 .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
 
 .main-nav { display: none; }
