@@ -354,72 +354,27 @@ p.section-lede {
   flex: 1;
 }
 
-/* ---------- Promo carousel (auto-rotating dish spotlight) ---------- */
-.promo-carousel {
-  position: relative;
-  margin: 36px auto 0;
-  max-width: 460px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-.promo-carousel-track {
-  display: flex;
+/* ---------- Gallery strip ---------- */
+.gallery-strip {
+  margin-top: 36px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 72%;
+  gap: 14px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  padding-bottom: 8px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
-.promo-carousel-track::-webkit-scrollbar { display: none; }
-.promo-carousel-slide {
-  flex: 0 0 100%;
+.gallery-strip img {
   scroll-snap-align: start;
   aspect-ratio: 4/5;
-}
-.promo-carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.promo-carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255,0.92);
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  z-index: 2;
 }
-.promo-carousel-btn:hover { background: var(--white); }
-.promo-carousel-btn.prev { left: 12px; }
-.promo-carousel-btn.next { right: 12px; }
-.promo-carousel-btn svg { width: 18px; height: 18px; }
-
-.promo-carousel-dots {
-  position: absolute;
-  bottom: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 7px;
-  z-index: 2;
-}
-.promo-carousel-dot {
-  width: 7px; height: 7px;
-  border-radius: 999px;
-  border: none;
-  padding: 0;
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
-  transition: background 0.2s ease, width 0.2s ease;
-}
-.promo-carousel-dot.is-active { background: var(--white); width: 20px; }
-
-@media (min-width: 640px) { .promo-carousel { max-width: 380px; } }
+@media (min-width: 640px) { .gallery-strip { grid-auto-columns: 38%; } }
+@media (min-width: 1080px) { .gallery-strip { grid-auto-columns: 23%; } }
 
 /* ---------- Split section (About / Story) ---------- */
 .split {
