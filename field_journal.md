@@ -292,3 +292,176 @@ direction is:
   it as current unless corrected in a later entry.
 - RISK: the same enforcement gap that caused this could recur — nothing
   currently forces a new session to open this file before writing code.
+
+---
+
+## 20260714 21:59 UTC-07:00
+
+**What we worked on:** Catch-up entry. Lance asked "Is the field journal
+current?" in a later session — this file had not been opened or updated
+since the 18:09 entry above, and a full round of additional work had
+happened in the meantime without being logged. This entry reconciles the
+journal against actual project state and closes out the 18:09 entry's
+outstanding next-step ("confirm the GitHub Pages deploy and update this
+journal with the URL").
+
+**Why we did it:** Exactly the enforcement gap the 18:09 entry predicted:
+several work sessions touched this project afterward and none of them
+opened this file first, so none of them appended to it. It was only found
+this time because Lance asked directly whether it was current, prompting a
+search of the project folder.
+
+**Files/folders/systems touched (since 18:09, undocumented until now):**
+- `.git/`, GitHub repo `lancewagner123/que-chevere` (public) — created,
+  pushed, GitHub Pages enabled.
+- `index.html`, `menu.html`, `catering.html`, `assets/css/style.css`,
+  `assets/js/main.js` — multiple rounds of edits (see decisions below).
+- `assets/optimized/` renamed to `assets/images - optimized/`.
+- `assets/carousel/` (6 new source PNGs from Lance) — new.
+- `assets/carousel-optimized/` created, then renamed to
+  `assets/carousel - optimized/`.
+- `.devserver.ps1` — throwaway local PowerShell static file server (no
+  Node/Python on this machine), used for local QA at
+  `http://localhost:8843/`.
+
+**Decisions made:**
+1. **GitHub Pages deploy confirmed live**: https://lancewagner123.github.io/que-chevere/
+   — closes 18:09 entry's next-step #1. No custom domain configured yet;
+   still on the `github.io` subdomain.
+2. **Deployment tooling**: this machine had no GitHub CLI and no GitHub
+   auth. Installed `gh` via winget, authenticated via the device-code
+   flow (Lance completed the browser step himself at
+   github.com/login/device — Claude never touched a password). `gh` is
+   now installed and authenticated on this machine for future sessions.
+3. **Three real bugs found by Lance testing on an actual phone**, fixed:
+   - Header logo rotated -25deg per request, then **reverted** to
+     unrotated per a follow-up request. Net effect: no visible change
+     from the 18:09 state, but worth logging so a future session doesn't
+     wonder whether the header logo was ever touched.
+   - `.gallery-strip` (the dish-photo scroll strip) had `overflow-x:
+     visible` at the desktop breakpoint, which let extra images spill
+     silently past the page edge instead of scrolling or wrapping. Fixed
+     by removing that override so it scrolls at all screen sizes.
+   - Mobile hamburger menu did not visibly open on real phones, even
+     though click events were firing correctly. Root cause: `<nav
+     class="mobile-nav">` was nested *inside* `<header>`, and the header
+     has `backdrop-filter: blur(...)` on it. Per the CSS spec,
+     `backdrop-filter` makes an element the containing block for any
+     `position: fixed` descendant, so the mobile nav's fixed positioning
+     was being computed relative to the header's own ~68px-tall box
+     instead of the viewport — it was technically "open" but had almost
+     no visible area. Fixed by moving `<nav class="mobile-nav">` to be a
+     sibling of `<header>` on all three pages, not a child.
+4. **Folder renames** (explicit request): `assets/optimized` →
+   `assets/images - optimized`; `assets/carousel-optimized` →
+   `assets/carousel - optimized`. Both contain literal spaces; referenced
+   in HTML with `%20` encoding. Verified working on live GitHub Pages
+   (Linux-hosted, case-sensitive filesystem — this matters because the
+   local Windows dev server would silently tolerate mistakes here that
+   GitHub Pages would not).
+5. **`assets/carousel` images**: Lance supplied 6 new source PNGs.
+   Converted via the `image-optimization` skill/script (same pipeline as
+   the rest of the site: WebP via `cwebp`, 1600/800/400w responsive
+   widths). Visual inspection (not just filename-matching) revealed these
+   are **not** plain product photos like the rest of `assets/images` —
+   they're a matched set of professionally designed promotional graphics
+   with baked-in headlines/taglines (Instagram-Story style, using the
+   site's yellow/blue/red brand palette). This also solved a standing
+   mystery from the original image inventory: the oddly-named `Buruisa
+   Chevere.png` file is revealed by its own promo graphic to actually be
+   **"Burguesa Chévere"** — a branded pun on "hamburguesa" (Spanish for
+   hamburger) + "Chévere."
+6. **Homepage dish-spotlight went through three states in this window**:
+   (a) originally a manual horizontal scroll strip of plain product
+   photos → (b) replaced with the 6 new designed promo cards *and*
+   upgraded to a single-slide auto-rotating carousel ("spinner": arrows,
+   dot indicators, ~4.5s auto-advance, pauses on hover/touch/focus/hidden
+   tab, respects `prefers-reduced-motion`) → (c) per a follow-up request,
+   **reverted the interaction model back to the original multi-image
+   scroll strip**, while keeping the new promo card images. Current
+   state is (c): scroll-strip layout, new designed-card images. All
+   `.promo-carousel*` CSS and its JS were removed cleanly, not just
+   hidden, when (c) happened.
+
+**Problems encountered:**
+- The interactive browser/preview tool was intermittently disconnected
+  across several of these sessions (not just once). When that happened,
+  verification was done via direct HTTP/curl checks, static code review,
+  and CSS-spec reasoning instead of live visual/click testing, and this
+  was flagged to Lance each time rather than silently claiming full
+  visual verification. Screenshot/zoom capture specifically has been
+  unreliable in this environment even when the tool connection itself
+  was up.
+- An earlier automated QA pass (in the session that built the original
+  hamburger-menu code) used a synthetic coordinate click that failed to
+  toggle the mobile nav, and a follow-up programmatic `.click()` call
+  "succeeded" (class toggled correctly) — this was wrongly written off
+  as a browser-automation quirk rather than a real bug, even though a
+  bounding-box height reading of 48px on the (supposedly full-viewport)
+  mobile nav was sitting right there as a clue. The actual bug
+  (backdrop-filter containing block) was only found later, from a real
+  phone report. Lesson: an inconsistent test result plus an odd geometry
+  reading is a signal to dig deeper, not a reason to write the whole
+  thing off as tooling flakiness.
+
+**Lessons learned:**
+- The enforcement gap flagged in the 18:09 entry is not hypothetical —
+  it happened again immediately, across every session in this window.
+  This journal only has value if something actually forces it open at
+  the start of a session; "read this before doing major work" written
+  inside the file itself cannot do that on its own.
+- `backdrop-filter` (and `filter`, `transform`, `will-change: transform`)
+  on an ancestor silently breaks `position: fixed` descendants by
+  changing their containing block. Worth remembering for any future
+  frosted-glass/blurred header treatment on this or other projects.
+- When a source-image folder's filenames don't match anything in a known
+  menu/spec, don't assume a typo and move on — open the image. In this
+  project that pattern has now paid off twice: once identifying "Buruisa
+  Chevere" as the hamburger by its ingredients, and this session
+  confirming via the promo graphic's own text that its real name is
+  "Burguesa Chévere."
+- GitHub Pages is case-sensitive and serves exactly what's in the repo;
+  the local Windows dev server is not case-sensitive and will not catch
+  path-casing or space-encoding mistakes. Anything path-related should
+  ideally be spot-checked against the live URL, not just localhost.
+
+**Current project state:**
+- Live site: https://lancewagner123.github.io/que-chevere/ (public repo
+  `lancewagner123/que-chevere`, `main` branch, root path, no custom
+  domain yet).
+- Three pages (`index.html`, `menu.html`, `catering.html`), shared
+  `assets/css/style.css` + `assets/js/main.js`, no build step.
+- Image folders: `assets/images/` (source) → `assets/images -
+  optimized/` (WebP derivatives); `assets/carousel/` (source promo
+  graphics) → `assets/carousel - optimized/` (WebP derivatives).
+- Homepage dish spotlight: horizontal scroll strip using the 6 designed
+  promo-card images.
+- `gh` CLI installed and authenticated on this machine; plain `git push`
+  now works for future sessions without re-running the auth flow.
+- `docs/` and `working/` remain empty except for `.gitkeep` placeholders
+  — vestigial from the original design-system-project scaffolding
+  described in the 10:22 entry, unused by the site that actually got
+  built. Not removed in this entry since deleting things isn't this
+  entry's purpose, but flagged here so a future session doesn't wonder
+  whether something is missing from them.
+
+**What should happen next:**
+1. If a custom domain (e.g. `quechevereaz.com`) is wanted instead of the
+   `github.io` subdomain, that needs a DNS change on Lance's end plus a
+   `CNAME` file in the repo — not yet done.
+2. Confirm with Lance whether `docs/` and `working/` should be removed
+   as unused, or repurposed.
+3. Continue the discipline this entry is itself demonstrating: append an
+   entry here after any meaningful session, even a small one — the gap
+   this entry just closed covered five distinct pieces of work across
+   an unknown number of sessions, and it was only caught because Lance
+   asked directly.
+
+**Assumptions / constraints / risks:**
+- ASSUMPTION: no work happened on this project outside what's
+  reconstructable from this conversation's own history — if any other
+  session touched this project in this window and also didn't log it,
+  this catch-up entry would not know to include it.
+- RISK: same as every prior entry's risk section — this file's accuracy
+  depends entirely on being opened and appended to, and nothing
+  mechanical enforces that yet.
