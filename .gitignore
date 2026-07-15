@@ -1,5 +1,8 @@
-# Local Claude Code settings (not part of the site)
-.claude/
+# Local/personal Claude Code settings (not part of the site).
+# settings.json IS committed on purpose -- it's the shared project config
+# (e.g. the field-journal SessionStart hook), not personal preferences.
+.claude/*
+!.claude/settings.json
 
 # OS junk
 .DS_Store

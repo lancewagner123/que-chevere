@@ -465,3 +465,127 @@ search of the project folder.
 - RISK: same as every prior entry's risk section — this file's accuracy
   depends entirely on being opened and appended to, and nothing
   mechanical enforces that yet.
+
+---
+
+## 20260714 22:09 UTC-07:00
+
+**What we worked on:** Closed the exact risk flagged in every prior entry's
+"Assumptions / constraints / risks" section. Lance asked to "make it
+automatic" (that a session actually opens this journal) rather than
+relying on convention alone. Added a `SessionStart` hook, via the
+`update-config` skill, in `.claude/settings.json`.
+
+**Why we did it:** "Read this before doing major work," written inside the
+file itself, has now provably failed at least twice in one day (the 18:09
+and 21:59 entries above are both examples of a session doing real work
+without ever opening this file). A hook is enforced by the harness, not by
+the model choosing to comply — the actual mechanism this problem needed.
+
+**Files/folders/systems touched:**
+- `.claude/settings.json` — new. `SessionStart` hook (PowerShell) that
+  checks whether `field_journal.md` exists and injects a short fixed
+  reminder into context at the start of every session in this project,
+  instructing that file be read (via the Read tool) before meaningful
+  work and appended to afterward. Falls back to a different reminder if
+  the file is ever missing.
+- `.gitignore` — was blanket-ignoring all of `.claude/`, which would have
+  kept this hook local-machine-only and defeated the point. Changed to
+  ignore `.claude/*` except `.claude/settings.json` specifically, so the
+  hook travels with the repo. `.claude/settings.local.json` (personal
+  permission-prompt allowlist, no hooks) stays ignored as before.
+- `field_journal.md` — this entry.
+
+**Decisions made:**
+- The hook injects a short **fixed pointer**, not the journal's actual
+  content or its most-recent-entry text. First draft did try to read and
+  inject file content (or the last entry) directly, but that was dropped
+  for two concrete reasons found during testing, not just in the abstract:
+  1. `Get-Content -Raw` without `-Encoding UTF8` on Windows PowerShell 5.1
+     silently corrupts non-ASCII characters (em dashes, curly quotes,
+     accents) — confirmed by testing it against this very file, which is
+     full of them.
+  2. Even with encoding fixed, injecting the full most-recent entry
+     doesn't scale — this file's entries are already long, and every
+     future entry added to the file would make every future session's
+     hook output larger forever. A fixed-size pointer costs the same
+     every time and the model can Read the actual file (cheap) once
+     told to.
+- Placed the hook in `.claude/settings.json` (shared, git-committed), not
+  `settings.local.json` (personal, gitignored) — this convention should
+  apply to anyone working from this repo, not just this machine.
+- Did not attempt to also enforce the "append after meaningful work" half
+  mechanically (e.g. via a `Stop` hook). A `Stop` hook fires at the end of
+  essentially every turn, including trivial ones, and judging what counts
+  as "meaningful work" needs actual judgment — decided a hard mechanical
+  nag on every turn would be worse than the fixed `SessionStart` reminder
+  plus normal instruction-following for that half.
+
+**Problems encountered:**
+- First pipe-test of the hook command (dumping the last entry's full text
+  via `Get-Content -Raw`) produced visibly mangled output — em dashes and
+  "Chévere" turned into mojibake. Caught by actually running the command
+  and reading its output character-by-character rather than assuming a
+  standard `Get-Content -Raw` call would round-trip UTF-8 correctly on
+  this machine's PowerShell 5.1.
+- `.claude/` was gitignored wholesale from the very first commit (see the
+  18:09 entry's file list — `.gitignore` was created in that session).
+  Nobody had needed a committed `.claude/settings.json` before now, so
+  the blanket ignore was never wrong until this entry made it wrong.
+  Caught by explicitly checking `git status --short` after staging,
+  rather than assuming a `Write` succeeding meant the file would actually
+  reach the remote.
+
+**Lessons learned:**
+- Don't trust `Get-Content -Raw` for UTF-8 files in Windows PowerShell
+  5.1 without `-Encoding UTF8` — this is the same general class of
+  encoding trap as the em-dash/curly-quote mangling that's bitten this
+  project before elsewhere; worth remembering as a standing caveat for
+  any future PowerShell text processing on this project.
+- When adding project config meant to be shared (anything in
+  `.claude/settings.json`, not `settings.local.json`), explicitly verify
+  it actually lands in git — a wholesale `.claude/` gitignore from an
+  earlier, different-context decision can silently swallow it.
+- A hook that injects a short, fixed pointer plus an instruction to Read
+  the real file is more robust than a hook that tries to reproduce or
+  summarize the file's content inline — less to get wrong, and it doesn't
+  grow unbounded as the file it's pointing at grows.
+
+**Current project state:**
+- Every new Claude Code session started with this project as its working
+  directory will now automatically receive a context reminder pointing at
+  `field_journal.md`, instructing it be read before meaningful work and
+  appended to afterward. This does not require re-opening `/hooks` or
+  restarting anything already running — it takes effect for the *next*
+  new session, since a fresh session reads `.claude/settings.json` off
+  disk at startup regardless of any file-watcher timing.
+- Verified: valid JSON (parsed successfully), correct hook schema
+  (`hookSpecificOutput.hookEventName` / `.additionalContext`), and the
+  exact command string as stored in the file was extracted and executed
+  directly (not just eyeballed) to rule out any escaping corruption from
+  writing it through JSON.
+- Not verified: an actual live Claude Code session start with this hook
+  installed (SessionStart hooks fire outside the turn that installs them,
+  so this can't be proven within the same session that added it — this
+  is a known limitation of the verification method, not a skipped step).
+
+**What should happen next:**
+1. Next new session opened in this project should visibly receive the
+   reminder — if a future entry doesn't confirm that happened, treat this
+   entry's claim as unverified rather than assumed working.
+2. If Lance ever wants the "append after work" half enforced more
+   mechanically too (not just via the SessionStart reminder + normal
+   instruction-following), revisit the `Stop`-hook idea rejected above,
+   but solve the "what counts as meaningful" judgment problem first.
+3. Everything else queued from the 21:59 entry (custom domain decision,
+   docs/working folder cleanup) is still open.
+
+**Assumptions / constraints / risks:**
+- ASSUMPTION: Claude Code loads `.claude/settings.json` fresh from disk
+  at the start of every new session for a given working directory, with
+  no caching that would make a stale/previous version take precedence —
+  this is the mechanism the whole entry depends on, and it's taken on
+  documented behavior, not directly observed in this session.
+- RISK: this only fires for sessions whose working directory is this
+  project. A session that touches these files from a different cwd (e.g.
+  operating on this repo from a parent directory) would not trigger it.

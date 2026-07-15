@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$p = 'field_journal.md'; if (Test-Path -LiteralPath $p) { $ctx = 'This project maintains field_journal.md at its root as the reconstruction record for all work done here (what was built, why, what failed, lessons learned, current state, next steps). Use the Read tool to read the FULL file before doing any meaningful work in this project -- do not proceed on a task brief alone without checking it first. After completing meaningful work, APPEND a new dated entry following the format documented at the top of that file. This has been skipped before and caused undocumented drift -- do not skip it again.' } else { $ctx = 'NOTE: this project is expected to maintain a field_journal.md at its root as a reconstruction record of work done here, but no such file currently exists. If you do meaningful work in this project, consider creating one.' }; $out = @{ hookSpecificOutput = @{ hookEventName = 'SessionStart'; additionalContext = $ctx } }; $out | ConvertTo-Json -Depth 6 -Compress"
+          }
+        ]
+      }
+    ]
+  }
+}
