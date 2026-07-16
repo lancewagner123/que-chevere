@@ -4,6 +4,14 @@
 .claude/*
 !.claude/settings.json
 
+# Internal documentation: field journal, research/briefs, anything used to
+# build the site but never meant to ship with it or reach a customer. This
+# repo is also the GitHub Pages deploy source, so anything tracked here is
+# effectively public -- keep docs/ local-only. (.gitkeep excepted so the
+# empty folder structure still shows up in the repo.)
+docs/*
+!docs/.gitkeep
+
 # OS junk
 .DS_Store
 Thumbs.db
