@@ -186,6 +186,26 @@ p.section-lede {
 .nav-toggle svg { width: 20px; height: 20px; }
 @media (min-width: 900px) { .nav-toggle { display: none; } }
 
+/* Language toggle — always visible, every breakpoint (unlike Call/Order,
+   which only appear at wider widths); small enough to never need hiding. */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 42px;
+  padding: 0 11px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--ink-soft);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.lang-toggle:hover { color: var(--ink); border-color: var(--ink-soft); }
+.lang-toggle svg { width: 15px; height: 15px; flex-shrink: 0; }
+
 .mobile-nav {
   position: fixed;
   inset: var(--header-h) 0 0 0;
@@ -199,16 +219,23 @@ p.section-lede {
   overflow-y: auto;
 }
 .mobile-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.mobile-nav a {
+.mobile-nav a, .mobile-nav .lang-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 18px 4px;
+  border: none;
   border-bottom: 1px solid var(--line);
+  background: none;
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 600;
+  color: inherit;
+  text-align: left;
 }
+.mobile-nav .lang-row { cursor: pointer; }
+.mobile-nav .lang-row svg { width: 20px; height: 20px; color: var(--muted); }
 .mobile-nav .cta-row { margin-top: 24px; flex-direction: column; }
 .mobile-nav .cta-row .btn { width: 100%; }
 @media (min-width: 900px) { .mobile-nav { display: none; } }

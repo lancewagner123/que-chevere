@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Que Chevere — Authentic Venezuelan Restaurant &amp; Food Truck in Mesa, AZ</title>
-<meta name="description" content="Que Chevere serves scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo in downtown Mesa, AZ — dine in, order online, or catch the food truck. 142 W Main St, Mesa, AZ 85201.">
+<title data-i18n="home.meta_title">Que Chevere — Authentic Venezuelan Restaurant &amp; Food Truck in Mesa, AZ</title>
+<meta name="description" content="Que Chevere serves scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo in downtown Mesa, AZ — dine in, order online, or catch the food truck. 142 W Main St, Mesa, AZ 85201." data-i18n-content="home.meta_desc">
 <link rel="canonical" href="https://quechevereaz.com/">
-<meta property="og:title" content="Que Chevere — Authentic Venezuelan Restaurant &amp; Food Truck in Mesa, AZ">
-<meta property="og:description" content="Scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo. Dine in, order online, or catch the food truck around the Valley.">
+<meta property="og:title" content="Que Chevere — Authentic Venezuelan Restaurant &amp; Food Truck in Mesa, AZ" data-i18n-content="home.og_title">
+<meta property="og:description" content="Scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo. Dine in, order online, or catch the food truck around the Valley." data-i18n-content="home.og_desc">
 <meta property="og:type" content="restaurant">
 <meta property="og:image" content="https://quechevereaz.com/assets/images%20-%20optimized/house-grill-platter-1122w.webp">
 <meta name="theme-color" content="#31459E">
@@ -55,31 +55,39 @@
       <span class="brand-name">Que Chevere</span>
     </a>
     <nav class="main-nav" aria-label="Primary">
-      <a href="index.html" class="is-active">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="catering.html">Catering &amp; Food Truck</a>
-      <a href="index.html#location">Location &amp; Hours</a>
+      <a href="index.html" class="is-active" data-i18n="nav.home">Home</a>
+      <a href="menu.html" data-i18n="nav.menu">Menu</a>
+      <a href="catering.html" data-i18n="nav.catering">Catering &amp; Food Truck</a>
+      <a href="index.html#location" data-i18n="nav.location">Location &amp; Hours</a>
     </nav>
     <div class="header-actions">
       <a href="tel:+14804744954" class="btn btn-outline-dark btn-sm btn-call">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        480-474-4954
+        <span data-i18n="header.call_label">480-474-4954</span>
       </a>
-      <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-order">Order Online</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-order" data-i18n="header.order">Order Online</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch to Spanish">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span data-lang-label>ES</span>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-i18n-aria-label="navtoggle.aria_open">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
 </header>
 <nav class="mobile-nav" aria-label="Mobile">
-  <a href="index.html">Home</a>
-  <a href="menu.html">Menu</a>
-  <a href="catering.html">Catering &amp; Food Truck</a>
-  <a href="index.html#location">Location &amp; Hours</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="menu.html" data-i18n="nav.menu">Menu</a>
+  <a href="catering.html" data-i18n="nav.catering">Catering &amp; Food Truck</a>
+  <a href="index.html#location" data-i18n="nav.location">Location &amp; Hours</a>
+  <button class="lang-row" type="button" data-lang-toggle aria-label="Switch to Spanish">
+    <span data-lang-label-full>Español</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+  </button>
   <div class="cta-row">
-    <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary">Order Online</a>
-    <a href="tel:+14804744954" class="btn btn-outline-dark">Call 480-474-4954</a>
+    <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="header.order">Order Online</a>
+    <a href="tel:+14804744954" class="btn btn-outline-dark" data-i18n="mobile.call">Call 480-474-4954</a>
   </div>
 </nav>
 
@@ -96,19 +104,19 @@
       alt="A shareable Que Chevere grill platter with churrasco, ribs, tostones, avocado, and dipping sauces"
       fetchpriority="high" decoding="async">
     <div class="container hero-content">
-      <span class="hero-eyebrow"><span class="flag"><span></span><span></span><span></span></span> Downtown Mesa, AZ</span>
-      <h1>Real Venezuelan cooking, made to order.</h1>
-      <p class="hero-sub">Corn arepas, cachapas, tequeños, and pabellón criollo — cooked fresh at 142 W Main St, plus our food truck rolling around the Valley.</p>
+      <span class="hero-eyebrow"><span class="flag"><span></span><span></span><span></span></span> <span data-i18n="home.hero_eyebrow">Downtown Mesa, AZ</span></span>
+      <h1 data-i18n="home.hero_title">Real Venezuelan cooking, made to order.</h1>
+      <p class="hero-sub" data-i18n="home.hero_sub">Corn arepas, cachapas, tequeños, and pabellón criollo — cooked fresh at 142 W Main St, plus our food truck rolling around the Valley.</p>
       <div class="cta-row">
-        <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary">Order Online</a>
-        <a href="menu.html" class="btn btn-light">View Menu</a>
-        <a href="tel:+14804744954" class="btn btn-outline">Call to Order</a>
+        <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="header.order">Order Online</a>
+        <a href="menu.html" class="btn btn-light" data-i18n="home.hero_cta_menu">View Menu</a>
+        <a href="tel:+14804744954" class="btn btn-outline" data-i18n="home.hero_cta_call">Call to Order</a>
       </div>
       <div class="hero-meta">
         <span data-hours-status>Checking hours…</span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          142 W Main St, Mesa, AZ 85201
+          <span data-i18n="home.hero_address_label">142 W Main St, Mesa, AZ 85201</span>
         </span>
       </div>
     </div>
@@ -117,9 +125,9 @@
   <!-- ============ FAN FAVORITES (food proof + featured dish cards) ============ -->
   <section id="menu">
     <div class="container">
-      <span class="eyebrow">From the Menu</span>
-      <h2 class="section-heading">Fan favorites, straight from the kitchen</h2>
-      <p class="section-lede">A taste of what's cooking — the full restaurant and food truck menus have a lot more.</p>
+      <span class="eyebrow" data-i18n="home.favs_eyebrow">From the Menu</span>
+      <h2 class="section-heading" data-i18n="home.favs_heading">Fan favorites, straight from the kitchen</h2>
+      <p class="section-lede" data-i18n="home.favs_lede">A taste of what's cooking — the full restaurant and food truck menus have a lot more.</p>
 
       <div class="dish-grid">
         <article class="dish-card">
@@ -134,8 +142,8 @@
               <span class="dish-card__name">Super Sampler</span>
               <span class="dish-card__price">$30</span>
             </div>
-            <span class="dish-card__tag">Most Popular</span>
-            <p class="dish-card__desc">4 mini patacones, 3 mini empanadas, 3 mini arepas (chicken, shredded beef &amp; reina), and 4 tequeños. Built for the table.</p>
+            <span class="dish-card__tag" data-i18n="home.card1_tag">Most Popular</span>
+            <p class="dish-card__desc" data-i18n="home.card1_desc">4 mini patacones, 3 mini empanadas, 3 mini arepas (chicken, shredded beef &amp; reina), and 4 tequeños. Built for the table.</p>
           </div>
         </article>
 
@@ -151,8 +159,8 @@
               <span class="dish-card__name">Pabellón Criollo</span>
               <span class="dish-card__price">$16</span>
             </div>
-            <span class="dish-card__tag">Venezuela's National Dish</span>
-            <p class="dish-card__desc">White rice, shredded beef, black beans with Venezuelan white cheese, sweet plantains, and a plain arepa.</p>
+            <span class="dish-card__tag" data-i18n="home.card2_tag">Venezuela's National Dish</span>
+            <p class="dish-card__desc" data-i18n="home.card2_desc">White rice, shredded beef, black beans with Venezuelan white cheese, sweet plantains, and a plain arepa.</p>
           </div>
         </article>
 
@@ -168,8 +176,8 @@
               <span class="dish-card__name">Arepa Reina Pepiada</span>
               <span class="dish-card__price">$14</span>
             </div>
-            <span class="dish-card__tag">Arepas</span>
-            <p class="dish-card__desc">Marinated shredded chicken breast mixed with cilantro sauce and avocado, stuffed into a griddled arepa.</p>
+            <span class="dish-card__tag" data-i18n="home.card3_tag">Arepas</span>
+            <p class="dish-card__desc" data-i18n="home.card3_desc">Marinated shredded chicken breast mixed with cilantro sauce and avocado, stuffed into a griddled arepa.</p>
           </div>
         </article>
 
@@ -185,42 +193,42 @@
               <span class="dish-card__name">Que Chevere Pepito</span>
               <span class="dish-card__price">$19</span>
             </div>
-            <span class="dish-card__tag">Dishes</span>
-            <p class="dish-card__desc">French bread stacked with steak, pork, chicken, bacon, ketchup, mayo, corn sauce, garlic sauce &amp; parmesan. Served with fries.</p>
+            <span class="dish-card__tag" data-i18n="home.card4_tag">Dishes</span>
+            <p class="dish-card__desc" data-i18n="home.card4_desc">French bread stacked with steak, pork, chicken, bacon, ketchup, mayo, corn sauce, garlic sauce &amp; parmesan. Served with fries.</p>
           </div>
         </article>
       </div>
 
       <div class="cta-row mt-lg">
-        <a href="menu.html" class="btn btn-outline-dark">See the Full Menu</a>
-        <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary">Order Online</a>
+        <a href="menu.html" class="btn btn-outline-dark" data-i18n="home.see_full_menu">See the Full Menu</a>
+        <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="header.order">Order Online</a>
       </div>
 
       <div class="gallery-strip" aria-label="Que Chevere dish spotlight">
         <img src="assets/carousel%20-%20optimized/buruisa-chevere-800w.webp"
              srcset="assets/carousel%20-%20optimized/buruisa-chevere-400w.webp 400w, assets/carousel%20-%20optimized/buruisa-chevere-800w.webp 800w, assets/carousel%20-%20optimized/buruisa-chevere-1122w.webp 1122w"
              sizes="40vw"
-             alt="Burguesa Chévere — stacked bold, loaded right. The Que Chevere hamburger piled with cheese, bacon, fried egg, and fries." loading="lazy" decoding="async">
+             alt="Burguesa Chévere — stacked bold, loaded right. The Que Chevere hamburger piled with cheese, bacon, fried egg, and fries." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt1">
         <img src="assets/carousel%20-%20optimized/cachapa-pabellon-800w.webp"
              srcset="assets/carousel%20-%20optimized/cachapa-pabellon-400w.webp 400w, assets/carousel%20-%20optimized/cachapa-pabellon-800w.webp 800w, assets/carousel%20-%20optimized/cachapa-pabellon-1122w.webp 1122w"
              sizes="40vw"
-             alt="Cachapa Pabellón — sweet corn cachapa with shredded beef, black beans, plantains, and cheese. Savory-sweet Venezuelan comfort." loading="lazy" decoding="async">
+             alt="Cachapa Pabellón — sweet corn cachapa with shredded beef, black beans, plantains, and cheese. Savory-sweet Venezuelan comfort." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt2">
         <img src="assets/carousel%20-%20optimized/cachapa-con-carne-mechada-800w.webp"
              srcset="assets/carousel%20-%20optimized/cachapa-con-carne-mechada-400w.webp 400w, assets/carousel%20-%20optimized/cachapa-con-carne-mechada-800w.webp 800w, assets/carousel%20-%20optimized/cachapa-con-carne-mechada-1122w.webp 1122w"
              sizes="40vw"
-             alt="Cachapa con Carne Mechada — sweet corn cachapa layered with carne mechada and queso blanco. Rich, melty, unforgettable." loading="lazy" decoding="async">
+             alt="Cachapa con Carne Mechada — sweet corn cachapa layered with carne mechada and queso blanco. Rich, melty, unforgettable." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt3">
         <img src="assets/carousel%20-%20optimized/empanada-pabellon-800w.webp"
              srcset="assets/carousel%20-%20optimized/empanada-pabellon-400w.webp 400w, assets/carousel%20-%20optimized/empanada-pabellon-800w.webp 800w, assets/carousel%20-%20optimized/empanada-pabellon-1122w.webp 1122w"
              sizes="40vw"
-             alt="Empanada Pabellón — crispy corn empanada with shredded beef, black beans, plantains, and cheese. Crunchy, hearty, iconic." loading="lazy" decoding="async">
+             alt="Empanada Pabellón — crispy corn empanada with shredded beef, black beans, plantains, and cheese. Crunchy, hearty, iconic." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt4">
         <img src="assets/carousel%20-%20optimized/patacon-trio-800w.webp"
              srcset="assets/carousel%20-%20optimized/patacon-trio-400w.webp 400w, assets/carousel%20-%20optimized/patacon-trio-800w.webp 800w, assets/carousel%20-%20optimized/patacon-trio-1122w.webp 1122w"
              sizes="40vw"
-             alt="Patacón Trio — crisp plantain, big flavor." loading="lazy" decoding="async">
+             alt="Patacón Trio — crisp plantain, big flavor." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt5">
         <img src="assets/carousel%20-%20optimized/reina-pepiada-02-800w.webp"
              srcset="assets/carousel%20-%20optimized/reina-pepiada-02-400w.webp 400w, assets/carousel%20-%20optimized/reina-pepiada-02-800w.webp 800w, assets/carousel%20-%20optimized/reina-pepiada-02-1024w.webp 1024w"
              sizes="40vw"
-             alt="Reina Pepiada — creamy chicken and avocado in a warm arepa, served with plantains and house sauces." loading="lazy" decoding="async">
+             alt="Reina Pepiada — creamy chicken and avocado in a warm arepa, served with plantains and house sauces." loading="lazy" decoding="async" data-i18n-alt="home.gallery_alt6">
       </div>
     </div>
   </section>
@@ -235,21 +243,21 @@
              alt="Que Chevere dining room interior in downtown Mesa" loading="lazy" decoding="async">
       </div>
       <div class="split-body">
-        <span class="eyebrow">Our Story</span>
-        <h2 class="section-heading">Started by Maria Fernanda and Orvid in 2016</h2>
-        <p class="section-lede">Maria Fernanda brought her family's Venezuelan cooking to Arizona from Barquisimeto, Venezuela — Orvid tasted it and knew it needed to reach more people. Que Chevere has run as a restaurant and a food truck ever since: same recipes, same kitchen, two ways to get to you.</p>
+        <span class="eyebrow" data-i18n="home.story_eyebrow">Our Story</span>
+        <h2 class="section-heading" data-i18n="home.story_heading">Started by Maria Fernanda and Orvid in 2016</h2>
+        <p class="section-lede" data-i18n="home.story_lede">Maria Fernanda brought her family's Venezuelan cooking to Arizona from Barquisimeto, Venezuela — Orvid tasted it and knew it needed to reach more people. Que Chevere has run as a restaurant and a food truck ever since: same recipes, same kitchen, two ways to get to you.</p>
         <ul class="fact-list">
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-            <span><strong>Dine in or takeout</strong> at 142 W Main St, Mesa — open Wed–Sat and Sunday.</span>
+            <span data-i18n-html="home.fact1_html"><strong>Dine in or takeout</strong> at 142 W Main St, Mesa — open Wed–Sat and Sunday.</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            <span><strong>Food truck menu</strong> of empanadas, arepas, and bowls — schedule varies, so follow our socials for where we'll be.</span>
+            <span data-i18n-html="home.fact2_html"><strong>Food truck menu</strong> of empanadas, arepas, and bowls — schedule varies, so follow our socials for where we'll be.</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span><strong>Catering for groups</strong> — $1,000 minimum, two weeks' notice. <a href="catering.html" style="color:var(--red); font-weight:700;">See catering details →</a></span>
+            <span data-i18n-html="home.fact3_html"><strong>Catering for groups</strong> — $1,000 minimum, two weeks' notice. <a href="catering.html" style="color:var(--red); font-weight:700;">See catering details →</a></span>
           </li>
         </ul>
       </div>
@@ -261,9 +269,9 @@
     <div class="container">
       <div class="split reverse">
         <div class="split-body">
-          <span class="eyebrow">Meet the Team</span>
-          <h2 class="section-heading">The people behind the counter and the truck</h2>
-          <p class="section-lede muted">Same crew, same recipes, two locations — the Main Street kitchen and the truck you'll spot around the Valley.</p>
+          <span class="eyebrow" data-i18n="home.team_eyebrow">Meet the Team</span>
+          <h2 class="section-heading" data-i18n="home.team_heading">The people behind the counter and the truck</h2>
+          <p class="section-lede muted" data-i18n="home.team_lede">Same crew, same recipes, two locations — the Main Street kitchen and the truck you'll spot around the Valley.</p>
           <div class="social-row">
             <a class="social-pill" href="https://www.facebook.com/quechevereaz/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
@@ -294,18 +302,18 @@
       <div class="trust-bar">
         <div class="trust-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <h3>Scratch-made staples</h3>
-          <p>Arepas, cachapas, and tequeños made the Venezuelan way — not a shortcut menu.</p>
+          <h3 data-i18n="home.trust1_h">Scratch-made staples</h3>
+          <p data-i18n="home.trust1_p">Arepas, cachapas, and tequeños made the Venezuelan way — not a shortcut menu.</p>
         </div>
         <div class="trust-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <h3>Two ways to catch us</h3>
-          <p>A standing kitchen on Main Street, plus a food truck that moves around the Valley.</p>
+          <h3 data-i18n="home.trust2_h">Two ways to catch us</h3>
+          <p data-i18n="home.trust2_p">A standing kitchen on Main Street, plus a food truck that moves around the Valley.</p>
         </div>
         <div class="trust-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <h3>Built for groups</h3>
-          <p>Samplers, platters, and catering for gatherings — from a table of four to a full event.</p>
+          <h3 data-i18n="home.trust3_h">Built for groups</h3>
+          <p data-i18n="home.trust3_p">Samplers, platters, and catering for gatherings — from a table of four to a full event.</p>
         </div>
       </div>
     </div>
@@ -314,23 +322,23 @@
   <!-- ============ REVIEWS ============ -->
   <section id="reviews">
     <div class="container">
-      <span class="eyebrow">What People Are Saying</span>
-      <h2 class="section-heading">Real reviews from Google and Yelp</h2>
-      <p class="section-lede">Pulled straight from our public listings — not cherry-picked quotes off a marketing sheet.</p>
+      <span class="eyebrow" data-i18n="home.reviews_eyebrow">What People Are Saying</span>
+      <h2 class="section-heading" data-i18n="home.reviews_heading">Real reviews from Google and Yelp</h2>
+      <p class="section-lede" data-i18n="home.reviews_lede">Pulled straight from our public listings — not cherry-picked quotes off a marketing sheet.</p>
 
       <div class="rating-badges">
         <a class="rating-badge" href="https://www.google.com/maps/search/Que+Chevere+142+W+Main+St+Mesa+AZ+85201" target="_blank" rel="noopener">
           <span class="rating-badge__score">4.7</span>
           <span class="rating-badge__meta">
             <span class="rating-badge__stars">★★★★★</span>
-            <span class="rating-badge__count">894 Google reviews</span>
+            <span class="rating-badge__count" data-i18n="home.google_count">894 Google reviews</span>
           </span>
         </a>
         <a class="rating-badge" href="https://www.yelp.com/biz/que-chevere-mesa" target="_blank" rel="noopener">
           <span class="rating-badge__score">4.7</span>
           <span class="rating-badge__meta">
             <span class="rating-badge__stars">★★★★★</span>
-            <span class="rating-badge__count">188 Yelp reviews</span>
+            <span class="rating-badge__count" data-i18n="home.yelp_count">188 Yelp reviews</span>
           </span>
         </a>
       </div>
@@ -341,7 +349,7 @@
           <p class="review-card__quote">"Everything has been great. The meats have so much flavor."</p>
           <div class="review-card__meta">
             <span class="review-card__author">Josh S.</span>
-            <span class="review-card__source">Google · 3 weeks ago</span>
+            <span class="review-card__source" data-i18n="home.review1_source">Google · 3 weeks ago</span>
           </div>
         </article>
 
@@ -350,7 +358,7 @@
           <p class="review-card__quote">"The sampler platter is a must — great flavor!"</p>
           <div class="review-card__meta">
             <span class="review-card__author">Robert I.</span>
-            <span class="review-card__source">Google · 3 months ago</span>
+            <span class="review-card__source" data-i18n="home.review2_source">Google · 3 months ago</span>
           </div>
         </article>
 
@@ -359,14 +367,14 @@
           <p class="review-card__quote">"The fried plantains were my favorite part!"</p>
           <div class="review-card__meta">
             <span class="review-card__author">Ziad M.</span>
-            <span class="review-card__source">Yelp · Jun 2026</span>
+            <span class="review-card__source" data-i18n="home.review3_source">Yelp · Jun 2026</span>
           </div>
         </article>
       </div>
 
       <div class="cta-row mt-lg">
-        <a href="https://www.google.com/maps/search/Que+Chevere+142+W+Main+St+Mesa+AZ+85201" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm">Read More on Google</a>
-        <a href="https://www.yelp.com/biz/que-chevere-mesa" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm">Read More on Yelp</a>
+        <a href="https://www.google.com/maps/search/Que+Chevere+142+W+Main+St+Mesa+AZ+85201" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" data-i18n="home.read_google">Read More on Google</a>
+        <a href="https://www.yelp.com/biz/que-chevere-mesa" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" data-i18n="home.read_yelp">Read More on Yelp</a>
       </div>
     </div>
   </section>
@@ -374,23 +382,23 @@
   <!-- ============ CATERING TEASER ============ -->
   <section>
     <div class="container">
-      <span class="eyebrow">Catering &amp; Events</span>
-      <h2 class="section-heading">Feeding your next event, Venezuelan-style</h2>
+      <span class="eyebrow" data-i18n="home.catering_eyebrow">Catering &amp; Events</span>
+      <h2 class="section-heading" data-i18n="home.catering_heading">Feeding your next event, Venezuelan-style</h2>
       <div class="catering-teaser mt-lg">
         <img src="assets/images%20-%20optimized/trailer-1600w.webp"
              srcset="assets/images%20-%20optimized/trailer-400w.webp 400w, assets/images%20-%20optimized/trailer-800w.webp 800w, assets/images%20-%20optimized/trailer-1600w.webp 1600w"
              sizes="100vw"
              alt="The Que Chevere food truck" loading="lazy" decoding="async">
         <div class="catering-teaser-body">
-          <h3 style="font-family:var(--font-display); font-size:1.6rem;">Book the truck or a catering order</h3>
-          <p style="margin-top:10px; color:rgba(255,255,255,0.85);">Two weeks' notice, $1,000 minimum. Truck schedule varies by date — call to confirm before you book.</p>
+          <h3 style="font-family:var(--font-display); font-size:1.6rem;" data-i18n="home.catering_body_h">Book the truck or a catering order</h3>
+          <p style="margin-top:10px; color:rgba(255,255,255,0.85);" data-i18n="home.catering_body_p">Two weeks' notice, $1,000 minimum. Truck schedule varies by date — call to confirm before you book.</p>
           <div class="catering-facts">
-            <span><b>$1,000</b> order minimum</span>
-            <span><b>2 weeks</b> lead time</span>
+            <span data-i18n-html="home.catering_fact1_html"><b>$1,000</b> order minimum</span>
+            <span data-i18n-html="home.catering_fact2_html"><b>2 weeks</b> lead time</span>
           </div>
           <div class="cta-row" style="margin-top:22px;">
-            <a href="catering.html" class="btn btn-primary">Catering Details</a>
-            <a href="tel:+14804744954" class="btn btn-outline">Call 480-474-4954</a>
+            <a href="catering.html" class="btn btn-primary" data-i18n="home.catering_details_btn">Catering Details</a>
+            <a href="tel:+14804744954" class="btn btn-outline" data-i18n="mobile.call">Call 480-474-4954</a>
           </div>
         </div>
       </div>
@@ -400,8 +408,8 @@
   <!-- ============ LOCATION & HOURS ============ -->
   <section id="location" class="band-paper-dim">
     <div class="container">
-      <span class="eyebrow">Visit Us</span>
-      <h2 class="section-heading">Location &amp; hours</h2>
+      <span class="eyebrow" data-i18n="home.location_eyebrow">Visit Us</span>
+      <h2 class="section-heading" data-i18n="home.location_heading">Location &amp; hours</h2>
       <div class="location-grid">
         <div class="map-embed">
           <iframe
@@ -413,16 +421,16 @@
           <div class="contact-card">
             <table class="hours-table">
               <tbody>
-                <tr data-day="mon"><td>Monday</td><td>Closed</td></tr>
-                <tr data-day="tue"><td>Tuesday</td><td>Closed</td></tr>
-                <tr data-day="wed"><td>Wednesday</td><td>10 AM – 9 PM</td></tr>
-                <tr data-day="thu"><td>Thursday</td><td>10 AM – 9 PM</td></tr>
-                <tr data-day="fri"><td>Friday</td><td>10 AM – 9 PM</td></tr>
-                <tr data-day="sat"><td>Saturday</td><td>10 AM – 9 PM</td></tr>
-                <tr data-day="sun"><td>Sunday</td><td>10 AM – 4 PM</td></tr>
+                <tr data-day="mon"><td data-i18n="home.day_mon">Monday</td><td data-i18n="home.closed">Closed</td></tr>
+                <tr data-day="tue"><td data-i18n="home.day_tue">Tuesday</td><td data-i18n="home.closed">Closed</td></tr>
+                <tr data-day="wed"><td data-i18n="home.day_wed">Wednesday</td><td data-i18n="home.hours_wedsat">10 AM – 9 PM</td></tr>
+                <tr data-day="thu"><td data-i18n="home.day_thu">Thursday</td><td data-i18n="home.hours_wedsat">10 AM – 9 PM</td></tr>
+                <tr data-day="fri"><td data-i18n="home.day_fri">Friday</td><td data-i18n="home.hours_wedsat">10 AM – 9 PM</td></tr>
+                <tr data-day="sat"><td data-i18n="home.day_sat">Saturday</td><td data-i18n="home.hours_wedsat">10 AM – 9 PM</td></tr>
+                <tr data-day="sun"><td data-i18n="home.day_sun">Sunday</td><td data-i18n="home.hours_sun">10 AM – 4 PM</td></tr>
               </tbody>
             </table>
-            <p class="alcohol-note">Alcoholic beverages are available to guests 21 and older dining in at our Main Street location. Alcohol is not available through the food truck, online orders, or takeout.</p>
+            <p class="alcohol-note" data-i18n="home.alcohol_note">Alcoholic beverages are available to guests 21 and older dining in at our Main Street location. Alcohol is not available through the food truck, online orders, or takeout.</p>
           </div>
           <div class="contact-card">
             <div class="contact-row">
@@ -438,7 +446,7 @@
               <a href="mailto:info@quechevereaz.com">info@quechevereaz.com</a>
             </div>
             <div class="cta-row" style="margin-top:16px;">
-              <a href="https://www.google.com/maps?q=Que+Chevere,142+W+Main+St,Mesa,AZ+85201" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm">Get Directions</a>
+              <a href="https://www.google.com/maps?q=Que+Chevere,142+W+Main+St,Mesa,AZ+85201" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm" data-i18n="home.get_directions">Get Directions</a>
             </div>
           </div>
         </div>
@@ -456,19 +464,19 @@
           <img src="assets/images%20-%20optimized/logo-400w.webp" alt="Que Chevere logo">
           <span>Que Chevere</span>
         </div>
-        <p>Authentic Venezuelan food in downtown Mesa, AZ — restaurant, food truck, and catering.</p>
+        <p data-i18n="footer.tagline">Authentic Venezuelan food in downtown Mesa, AZ — restaurant, food truck, and catering.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4 data-i18n="footer.explore">Explore</h4>
         <ul>
-          <li><a href="menu.html">Full Menu</a></li>
-          <li><a href="catering.html">Catering &amp; Food Truck</a></li>
-          <li><a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener">Order Online</a></li>
-          <li><a href="index.html#location">Location &amp; Hours</a></li>
+          <li><a href="menu.html" data-i18n="footer.full_menu">Full Menu</a></li>
+          <li><a href="catering.html" data-i18n="nav.catering">Catering &amp; Food Truck</a></li>
+          <li><a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" data-i18n="header.order">Order Online</a></li>
+          <li><a href="index.html#location" data-i18n="nav.location">Location &amp; Hours</a></li>
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h4 data-i18n="footer.visit">Visit</h4>
         <ul>
           <li>142 W Main St, Mesa, AZ 85201</li>
           <li><a href="tel:+14804744954">480-474-4954</a></li>
@@ -477,7 +485,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Que Chevere. All rights reserved.</span>
+      <span>© <span id="year"></span> Que Chevere. <span data-i18n="footer.rights">All rights reserved.</span></span>
       <div class="footer-socials">
         <a href="https://www.facebook.com/quechevereaz/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
         <a href="https://www.instagram.com/quechevereaz" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
@@ -488,11 +496,12 @@
 </footer>
 
 <div class="mobile-action-bar">
-  <a href="tel:+14804744954"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>
-  <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="is-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
+  <a href="tel:+14804744954"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span data-i18n="mab.call">Call</span></a>
+  <a href="https://my-site-109978-105530.square.site/" target="_blank" rel="noopener" class="is-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span data-i18n="header.order">Order Online</span></a>
 </div>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/translations.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
