@@ -443,12 +443,16 @@ p.section-lede {
 .trust-card p { margin-top: 8px; font-size: 0.92rem; color: rgba(255,255,255,0.72); }
 .social-row { display: flex; gap: 10px; margin-top: 34px; flex-wrap: wrap; }
 .social-pill {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 10px;
   border: 1px solid rgba(255,255,255,0.25);
-  padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+  padding: 6px 18px 6px 6px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
 }
 .social-pill:hover { background: rgba(255,255,255,0.1); }
-.social-pill svg { width: 16px; height: 16px; }
+.social-pill__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--white); flex-shrink: 0;
+}
+.social-pill__icon svg { width: 15px; height: 15px; display: block; }
 
 /* ---------- Reviews ---------- */
 .rating-badges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
@@ -580,11 +584,12 @@ p.section-lede {
 .footer-socials { display: flex; gap: 10px; }
 .footer-socials a {
   width: 36px; height: 36px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: var(--white);
   display: inline-flex; align-items: center; justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.footer-socials svg { width: 16px; height: 16px; }
-.footer-socials a:hover { background: rgba(255,255,255,0.1); }
+.footer-socials svg { width: 18px; height: 18px; display: block; }
+.footer-socials a:hover { transform: scale(1.08); box-shadow: var(--shadow-sm); }
 
 /* ---------- Sticky mobile action bar ---------- */
 .mobile-action-bar {
