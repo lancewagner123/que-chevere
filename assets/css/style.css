@@ -139,9 +139,10 @@ p.section-lede {
   height: var(--header-h);
   display: flex;
   align-items: center;
-  background: rgba(255, 251, 243, 0.9);
+  background: rgba(27, 23, 18, 0.92);
   backdrop-filter: saturate(160%) blur(10px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; }
@@ -153,11 +154,11 @@ p.section-lede {
   .main-nav a {
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--ink-soft);
+    color: rgba(255, 255, 255, 0.75);
     position: relative;
     padding: 6px 0;
   }
-  .main-nav a:hover, .main-nav a.is-active { color: var(--ink); }
+  .main-nav a:hover, .main-nav a.is-active { color: var(--white); }
   .main-nav a.is-active::after {
     content: "";
     position: absolute;
