@@ -453,6 +453,7 @@ p.section-lede {
   width: 26px; height: 26px; border-radius: 50%; background: var(--white); flex-shrink: 0;
 }
 .social-pill__icon svg { width: 15px; height: 15px; display: block; }
+.social-pill__icon--x { background: var(--ink); }
 
 /* ---------- Reviews ---------- */
 .rating-badges { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
@@ -590,6 +591,7 @@ p.section-lede {
 }
 .footer-socials svg { width: 18px; height: 18px; display: block; }
 .footer-socials a:hover { transform: scale(1.08); box-shadow: var(--shadow-sm); }
+.footer-socials a.is-x { background: var(--ink); border: 1px solid rgba(255,255,255,0.2); }
 
 /* ---------- Sticky mobile action bar ---------- */
 .mobile-action-bar {
