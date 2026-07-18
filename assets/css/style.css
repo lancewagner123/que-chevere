@@ -462,6 +462,14 @@ p.section-lede {
 .rating-badge__meta { display: flex; flex-direction: column; line-height: 1.3; }
 .rating-badge__stars { color: var(--yellow); filter: drop-shadow(0 0 0.5px var(--ink-soft)); font-size: 0.85rem; letter-spacing: 1px; }
 .rating-badge__count { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+.rating-badge__link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; flex-shrink: 0;
+  border-radius: 50%; background: var(--paper-dim); color: var(--ink-soft);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.rating-badge__link svg { width: 17px; height: 17px; }
+.rating-badge__link:hover { background: var(--ink); color: var(--white); }
 
 .review-grid {
   margin-top: 30px;
