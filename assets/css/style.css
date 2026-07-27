@@ -55,6 +55,20 @@ h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 600; 
 p { margin: 0; }
 main { display: block; overflow-x: clip; }
 
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 10px 16px;
+  z-index: 100;
+  font-weight: 700;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus { left: 0; }
+
 .container {
   width: 100%;
   max-width: var(--container);
