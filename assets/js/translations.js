@@ -63,7 +63,7 @@ window.QC_TRANSLATIONS = {
     "home.team_heading": "The people behind the counter and the truck",
     "home.team_lede": "Same crew, same recipes, two locations: the Main Street kitchen and the truck you'll spot around the Valley.",
     "home.trust1_h": "Scratch-made staples",
-    "home.trust1_p": "Arepas, cachapas, and tequeños made the Venezuelan way, not a shortcut menu.",
+    "home.trust1_p": "Arepas, cachapas, and tequeños made the Venezuelan way.",
     "home.trust2_h": "Two ways to catch us",
     "home.trust2_p": "A standing kitchen on Main Street, plus a food truck that moves around the Valley.",
     "home.trust3_h": "Built for groups",
@@ -71,7 +71,7 @@ window.QC_TRANSLATIONS = {
 
     "home.reviews_eyebrow": "What People Are Saying",
     "home.reviews_heading": "Real reviews from Google and Yelp",
-    "home.reviews_lede": "Pulled straight from our public listings, not cherry-picked quotes off a marketing sheet.",
+    "home.reviews_lede": "Pulled straight from our public listings.",
     "home.google_count": "894 Google reviews",
     "home.yelp_count": "188 Yelp reviews",
     "home.review1_source": "Google · 3 weeks ago",
@@ -82,7 +82,7 @@ window.QC_TRANSLATIONS = {
 
     "home.catering_heading": "Feeding your next event, Venezuelan-style",
     "home.catering_body_h": "Book the truck or a catering order",
-    "home.catering_body_p": "Two weeks' notice, $1,000 per event. Truck schedule varies by date. Call to confirm before you book.",
+    "home.catering_body_p": "Two weeks' notice, $1,000 per event, and a truck schedule that varies by date. Call to confirm before you book.",
     "home.catering_fact1_html": "<b>$1,000</b> per event",
     "home.catering_fact2_html": "<b>2 weeks</b> lead time",
     "home.catering_details_btn": "Food Truck Details",
@@ -152,7 +152,7 @@ window.QC_TRANSLATIONS = {
     "menu.chicha_addon": "No ice, $1 extra",
     "menu.disclaimer": "Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.",
 
-    "menu.foodtruck_note_html": "Food truck schedule and location vary. <a href=\"https://www.instagram.com/quechevereaz\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--blue); font-weight:700;\">Follow us on Instagram</a> for where we'll be. Truck pricing is set on-site and may differ from the restaurant. Call 480-474-4954 to confirm current pricing.",
+    "menu.foodtruck_note_html": "Food truck schedule and location vary, so <a href=\"https://www.instagram.com/quechevereaz\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--blue); font-weight:700;\">follow us on Instagram</a> for where we'll be. Truck pricing is set on-site and may differ from the restaurant, so call 480-474-4954 to confirm current pricing.",
     "menu.ft_cat_empanadas": "Empanadas",
     "menu.ft_cat_plates": "Plates",
     "menu.ft_cat_sides": "Sides / Drinks",
@@ -268,13 +268,13 @@ window.QC_TRANSLATIONS = {
     "platters.step1_h": "Call or email at least 24 hours ahead",
     "platters.step1_p_html": "Reach us at <a href=\"tel:+14804744954\" style=\"color:var(--red); font-weight:700;\">480-474-4954</a> or <a href=\"mailto:info@quechevereaz.com\" style=\"color:var(--red); font-weight:700;\">info@quechevereaz.com</a> with your platter choice and pickup or delivery details.",
     "platters.step2_h": "Choose pickup or delivery",
-    "platters.step2_p": "Pickup at 142 W Main St is free. Delivery is in-house. The fee depends on your distance from the restaurant.",
+    "platters.step2_p": "Pickup at 142 W Main St is free. Delivery is in-house and priced by distance.",
     "platters.step3_h": "We prep it fresh and get it to you",
     "platters.step3_p": "Your platter is made to order and ready at the time you arrange with us.",
 
     "platters.talk_eyebrow": "Ready to Order?",
     "platters.talk_h": "Let's get your platter on the calendar",
-    "platters.talk_p": "Call or email with your platter choice, date, and pickup or delivery preference. Remember, at least 24 hours' notice.",
+    "platters.talk_p": "Call or email with your platter choice, date, and pickup or delivery preference. We just need at least 24 hours' notice.",
     "platters.email_us_btn": "Email Us"
   },
 
@@ -327,7 +327,7 @@ window.QC_TRANSLATIONS = {
     "home.team_heading": "La gente detrás del mostrador y del camión",
     "home.team_lede": "El mismo equipo, las mismas recetas, dos lugares: la cocina de Main Street y el camión que verás por el Valle.",
     "home.trust1_h": "Lo básico, hecho desde cero",
-    "home.trust1_p": "Arepas, cachapas y tequeños hechos a la manera venezolana, no es un menú de atajos.",
+    "home.trust1_p": "Arepas, cachapas y tequeños hechos a la manera venezolana.",
     "home.trust2_h": "Dos formas de encontrarnos",
     "home.trust2_p": "Una cocina fija en Main Street, más un food truck que se mueve por el Valle.",
     "home.trust3_h": "Hecho para grupos",
@@ -335,7 +335,7 @@ window.QC_TRANSLATIONS = {
 
     "home.reviews_eyebrow": "Lo Que Dice la Gente",
     "home.reviews_heading": "Reseñas reales de Google y Yelp",
-    "home.reviews_lede": "Tomadas directamente de nuestros perfiles públicos, no son citas escogidas de una hoja de marketing.",
+    "home.reviews_lede": "Tomadas directamente de nuestros perfiles públicos.",
     "home.google_count": "894 reseñas en Google",
     "home.yelp_count": "188 reseñas en Yelp",
     "home.review1_source": "Google · hace 3 semanas",
@@ -346,7 +346,7 @@ window.QC_TRANSLATIONS = {
 
     "home.catering_heading": "Alimentando tu próximo evento, al estilo venezolano",
     "home.catering_body_h": "Reserva el camión o haz un pedido de catering",
-    "home.catering_body_p": "Dos semanas de anticipación, $1,000 por evento. El horario del camión varía según la fecha. Llama para confirmar antes de reservar.",
+    "home.catering_body_p": "Dos semanas de anticipación, $1,000 por evento, y un horario del camión que varía según la fecha. Llama para confirmar antes de reservar.",
     "home.catering_fact1_html": "<b>$1,000</b> por evento",
     "home.catering_fact2_html": "<b>2 semanas</b> de anticipación",
     "home.catering_details_btn": "Detalles del Food Truck",
@@ -416,7 +416,7 @@ window.QC_TRANSLATIONS = {
     "menu.chicha_addon": "Sin hielo, $1 adicional",
     "menu.disclaimer": "Consumir carnes, aves, mariscos, o huevos crudos o poco cocidos puede aumentar el riesgo de enfermedades transmitidas por alimentos, especialmente si tienes ciertas condiciones médicas.",
 
-    "menu.foodtruck_note_html": "El horario y la ubicación del food truck varían. <a href=\"https://www.instagram.com/quechevereaz\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--blue); font-weight:700;\">Síguenos en Instagram</a> para saber dónde estaremos. El precio en el camión se define en el momento y puede diferir del restaurante. Llama al 480-474-4954 para confirmar el precio actual.",
+    "menu.foodtruck_note_html": "El horario y la ubicación del food truck varían, así que <a href=\"https://www.instagram.com/quechevereaz\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--blue); font-weight:700;\">síguenos en Instagram</a> para saber dónde estaremos. El precio en el camión se define en el momento y puede diferir del restaurante, así que llama al 480-474-4954 para confirmar el precio actual.",
     "menu.ft_cat_empanadas": "Empanadas",
     "menu.ft_cat_plates": "Platos",
     "menu.ft_cat_sides": "Acompañantes / Bebidas",
@@ -532,13 +532,13 @@ window.QC_TRANSLATIONS = {
     "platters.step1_h": "Llama o escribe con al menos 24 horas de anticipación",
     "platters.step1_p_html": "Contáctanos al <a href=\"tel:+14804744954\" style=\"color:var(--red); font-weight:700;\">480-474-4954</a> o a <a href=\"mailto:info@quechevereaz.com\" style=\"color:var(--red); font-weight:700;\">info@quechevereaz.com</a> con tu bandeja elegida y los detalles de recogida o entrega.",
     "platters.step2_h": "Elige recoger o que te lo llevemos",
-    "platters.step2_p": "Recoger en 142 W Main St es gratis. La entrega es propia. El costo depende de qué tan lejos estés del restaurante.",
+    "platters.step2_p": "Recoger en 142 W Main St es gratis. La entrega es propia, con costo según la distancia.",
     "platters.step3_h": "Lo preparamos fresco y te lo llevamos",
     "platters.step3_p": "Tu bandeja se prepara al pedido y está lista a la hora que acordemos contigo.",
 
     "platters.talk_eyebrow": "¿Listo para Ordenar?",
     "platters.talk_h": "Agendemos tu bandeja",
-    "platters.talk_p": "Llama o escribe con tu bandeja elegida, la fecha, y si prefieres recoger o entrega. Recuerda, con al menos 24 horas de anticipación.",
+    "platters.talk_p": "Llama o escribe con tu bandeja elegida, la fecha, y si prefieres recoger o entrega. Solo necesitamos al menos 24 horas de anticipación.",
     "platters.email_us_btn": "Escríbenos"
   }
 };
