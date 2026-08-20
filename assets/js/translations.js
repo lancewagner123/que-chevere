@@ -57,13 +57,6 @@ window.QC_TRANSLATIONS = {
     "home.card4_desc": "French bread stacked with steak, pork, chicken, bacon, ketchup, mayo, corn sauce, garlic sauce & parmesan. Served with fries.",
     "home.see_full_menu": "See the Full Menu",
 
-    "home.gallery_alt1": "Burguesa Chévere — stacked bold, loaded right. The Que Chevere hamburger piled with cheese, bacon, fried egg, and fries.",
-    "home.gallery_alt2": "Cachapa Pabellón — sweet corn cachapa with shredded beef, black beans, plantains, and cheese. Savory-sweet Venezuelan comfort.",
-    "home.gallery_alt3": "Cachapa con Carne Mechada — sweet corn cachapa layered with carne mechada and queso blanco. Rich, melty, unforgettable.",
-    "home.gallery_alt4": "Empanada Pabellón — crispy corn empanada with shredded beef, black beans, plantains, and cheese. Crunchy, hearty, iconic.",
-    "home.gallery_alt5": "Patacón Trio — crisp plantain, big flavor.",
-    "home.gallery_alt6": "Reina Pepiada — creamy chicken and avocado in a warm arepa, served with plantains and house sauces.",
-
     "home.story_eyebrow": "Our Story",
     "home.story_heading": "Started by Maria Fernanda and Orvid in 2016",
     "home.story_lede": "Maria Fernanda brought her family's Venezuelan cooking to Arizona from Barquisimeto, Venezuela — Orvid tasted it and knew it needed to reach more people. Que Chevere has run as a restaurant and a food truck ever since: same recipes, same kitchen, two ways to get to you.",
@@ -338,13 +331,6 @@ window.QC_TRANSLATIONS = {
     "home.card4_tag": "Platos",
     "home.card4_desc": "Pan francés apilado con bistec, cerdo, pollo, tocineta, ketchup, mayonesa, salsa de maíz, salsa de ajo y parmesano. Servido con papas fritas.",
     "home.see_full_menu": "Ver el Menú Completo",
-
-    "home.gallery_alt1": "Burguesa Chévere — bien armada, bien cargada. La hamburguesa de Que Chevere apilada con queso, tocineta, huevo frito y papas fritas.",
-    "home.gallery_alt2": "Cachapa Pabellón — cachapa dulce de maíz con carne mechada, caraotas negras, tajadas y queso. Comodidad venezolana, dulce y salada.",
-    "home.gallery_alt3": "Cachapa con Carne Mechada — cachapa dulce de maíz con capas de carne mechada y queso blanco. Rica, derretida, inolvidable.",
-    "home.gallery_alt4": "Empanada Pabellón — empanada de maíz crujiente con carne mechada, caraotas negras, tajadas y queso. Crujiente, contundente, icónica.",
-    "home.gallery_alt5": "Patacón Trío — plátano crujiente, mucho sabor.",
-    "home.gallery_alt6": "Reina Pepiada — pollo cremoso y aguacate en una arepa calentita, servida con tajadas y salsas de la casa.",
 
     "home.story_eyebrow": "Nuestra Historia",
     "home.story_heading": "Fundado por Maria Fernanda y Orvid en 2016",

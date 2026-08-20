@@ -402,28 +402,6 @@ p.section-lede {
   flex: 1;
 }
 
-/* ---------- Gallery strip ---------- */
-.gallery-strip {
-  margin-top: 36px;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 72%;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 8px;
-  -webkit-overflow-scrolling: touch;
-}
-.gallery-strip img {
-  scroll-snap-align: start;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
-@media (min-width: 640px) { .gallery-strip { grid-auto-columns: 38%; } }
-@media (min-width: 1080px) { .gallery-strip { grid-auto-columns: 23%; } }
-
 /* ---------- Split section (About / Story) ---------- */
 .split {
   display: grid;
