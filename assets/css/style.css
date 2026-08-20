@@ -70,6 +70,12 @@ main { display: block; overflow-x: clip; }
 }
 .skip-link:focus { left: 0; }
 
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .container {
   width: 100%;
   max-width: var(--container);
@@ -132,16 +138,12 @@ p.section-lede {
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn-primary { background: var(--red); color: var(--white); box-shadow: var(--shadow-sm); }
 .btn-primary:hover { background: var(--red-dark); box-shadow: var(--shadow-md); }
-.btn-light { background: var(--white); color: var(--ink); box-shadow: var(--shadow-sm); }
-.btn-light:hover { box-shadow: var(--shadow-md); }
 .btn-outline { background: transparent; border-color: currentColor; color: var(--white); }
 .btn-outline:hover { background: rgba(255,255,255,0.12); }
 .btn-outline-dark { background: transparent; border-color: var(--ink); color: var(--ink); }
 .btn-outline-dark:hover { background: var(--ink); color: var(--white); }
-.btn-blue { background: var(--blue); color: var(--white); box-shadow: var(--shadow-sm); }
-.btn-blue:hover { background: var(--blue-dark); }
-.btn-catering { background: var(--red); color: var(--white); box-shadow: var(--shadow-sm); }
-.btn-catering:hover { background: var(--red-dark); box-shadow: var(--shadow-md); }
+.btn-catering { background: var(--ink); color: var(--white); box-shadow: var(--shadow-sm); border: 1px solid var(--white); }
+.btn-catering:hover { background: var(--ink-soft); box-shadow: var(--shadow-md); }
 .btn-sm { padding: 11px 18px; font-size: 0.9rem; }
 .btn-block { width: 100%; }
 
@@ -191,8 +193,7 @@ p.section-lede {
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .header-actions .btn { display: none; }
-@media (min-width: 700px) { .header-actions .btn-catering { display: inline-flex; } }
-@media (min-width: 900px) { .header-actions .btn-order { display: inline-flex; } }
+@media (min-width: 700px) { .header-actions .btn-catering, .header-actions .btn-order { display: inline-flex; } }
 
 .nav-toggle {
   display: inline-flex;
@@ -239,7 +240,7 @@ p.section-lede {
   overflow-y: auto;
 }
 .mobile-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.mobile-nav a, .mobile-nav .lang-row {
+.mobile-nav > a, .mobile-nav .lang-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -290,26 +291,6 @@ p.section-lede {
   width: 100%;
   padding: 40px 0 44px;
 }
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.28);
-  padding: 7px 14px 7px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  backdrop-filter: blur(6px);
-}
-.hero-eyebrow .flag { display: inline-flex; gap: 2px; }
-.hero-eyebrow .flag span { width: 6px; height: 14px; border-radius: 1px; }
-.hero-eyebrow .flag span:nth-child(1) { background: var(--yellow); }
-.hero-eyebrow .flag span:nth-child(2) { background: var(--blue); }
-.hero-eyebrow .flag span:nth-child(3) { background: var(--red); }
-
 .hero h1 {
   margin-top: 16px;
   font-size: clamp(2.5rem, 9vw, 4.6rem);
@@ -426,15 +407,23 @@ p.section-lede {
 .trust-bar {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: 0;
   margin-top: 34px;
+  border-top: 1px solid rgba(255,255,255,0.14);
 }
 @media (min-width: 760px) { .trust-bar { grid-template-columns: repeat(3, 1fr); } }
 .trust-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+@media (min-width: 760px) {
+  .trust-card {
+    padding: 26px 24px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255,255,255,0.14);
+  }
+  .trust-card:first-child { padding-left: 0; }
+  .trust-card:last-child { border-right: none; padding-right: 0; }
 }
 .trust-card svg { width: 26px; height: 26px; color: var(--yellow); }
 .trust-card h3 { font-size: 1.1rem; margin-top: 14px; color: var(--white); }
