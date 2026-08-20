@@ -70,6 +70,16 @@ main { display: block; overflow-x: clip; }
 }
 .skip-link:focus { left: 0; }
 
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 a:focus-visible, button:focus-visible {
   outline: 2px solid var(--red);
   outline-offset: 2px;
@@ -191,6 +201,56 @@ p.section-lede {
   }
 }
 
+.nav-dropdown { position: relative; }
+.nav-dropdown__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+}
+.nav-dropdown__btn:hover, .nav-dropdown__btn[aria-expanded="true"] { color: var(--white); }
+.nav-dropdown__btn svg { width: 12px; height: 12px; transition: transform 0.2s ease; }
+.nav-dropdown__btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav-dropdown__panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 70;
+}
+.nav-dropdown__panel.is-open { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dropdown__panel a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-dropdown__panel a:hover { background: var(--paper-dim); }
+.nav-dropdown__panel svg { width: 18px; height: 18px; flex-shrink: 0; }
+
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .header-actions .btn { display: none; }
 @media (min-width: 700px) { .header-actions .btn-catering, .header-actions .btn-order { display: inline-flex; } }
@@ -235,11 +295,18 @@ p.section-lede {
   padding: 24px 20px;
   transform: translateY(-8px);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
   overflow-y: auto;
 }
-.mobile-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.mobile-nav.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
+}
 .mobile-nav > a, .mobile-nav .lang-row {
   display: flex;
   justify-content: space-between;
@@ -259,6 +326,38 @@ p.section-lede {
 .mobile-nav .lang-row svg { width: 20px; height: 20px; color: var(--muted); }
 .mobile-nav .cta-row { margin-top: 24px; flex-direction: column; }
 .mobile-nav .cta-row .btn { width: 100%; }
+.mobile-nav .nav-dropdown__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 18px 4px;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mobile-nav .nav-dropdown__btn svg { width: 16px; height: 16px; color: var(--muted); }
+.mobile-nav .nav-dropdown__panel {
+  position: static;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: none;
+  padding: 0;
+  min-width: 0;
+  gap: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+.mobile-nav .nav-dropdown__panel.is-open { max-height: 220px; padding: 4px 0 10px; }
+.mobile-nav .nav-dropdown__panel a { padding: 10px 6px; font-size: 1.05rem; }
 @media (min-width: 900px) { .mobile-nav { display: none; } }
 
 /* ---------- Hero ---------- */
@@ -401,7 +500,10 @@ p.section-lede {
 /* ---------- Band (colored full-width sections) ---------- */
 .band-dark { background: var(--ink); color: var(--white); }
 .band-dark .muted { color: rgba(255,255,255,0.68); }
-.band-paper-dim { background: var(--paper-dim); }
+/* --muted and --red both fall under the 4.5:1 text-contrast threshold on --paper-dim;
+   redefine them locally so every existing var(--muted)/var(--red) usage inside these
+   sections (including inline-styled links) resolves to a passing color automatically. */
+.band-paper-dim { background: var(--paper-dim); --muted: var(--ink-soft); --red: var(--red-dark); }
 
 /* ---------- Trust / social bar ---------- */
 .trust-bar {
@@ -519,9 +621,9 @@ p.section-lede {
 }
 @media (min-width: 900px) { .location-grid { grid-template-columns: 1.1fr 0.9fr; gap: 40px; } }
 .hours-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
-.hours-table td { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+.hours-table td, .hours-table th { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; font-weight: 400; text-align: left; }
 .hours-table td:last-child { text-align: right; font-weight: 600; }
-.hours-table tr.is-today td { color: var(--red); font-weight: 700; }
+.hours-table tr.is-today td, .hours-table tr.is-today th { color: var(--red); font-weight: 700; }
 .map-embed {
   border-radius: var(--radius-md);
   overflow: hidden;

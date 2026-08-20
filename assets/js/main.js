@@ -4,18 +4,66 @@
   /* Mobile nav toggle */
   var toggle = document.querySelector(".nav-toggle");
   var mobileNav = document.querySelector(".mobile-nav");
+
+  function updateNavToggleLabel(open) {
+    if (!toggle) return;
+    var lang = document.documentElement.getAttribute("lang") || "en";
+    var dict = (window.QC_TRANSLATIONS && window.QC_TRANSLATIONS[lang]) || {};
+    var key = open ? "navtoggle.aria_close" : "navtoggle.aria_open";
+    if (Object.prototype.hasOwnProperty.call(dict, key)) toggle.setAttribute("aria-label", dict[key]);
+  }
+
   if (toggle && mobileNav) {
+    var closeMobileNav = function (returnFocus) {
+      mobileNav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      updateNavToggleLabel(false);
+      document.body.style.overflow = "";
+      if (returnFocus) toggle.focus();
+    };
     toggle.addEventListener("click", function () {
       var open = mobileNav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      updateNavToggleLabel(open);
       document.body.style.overflow = open ? "hidden" : "";
+      if (open) {
+        var firstLink = mobileNav.querySelector("a");
+        if (firstLink) firstLink.focus();
+      }
     });
     mobileNav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        mobileNav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+      a.addEventListener("click", function () { closeMobileNav(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mobileNav.classList.contains("is-open")) closeMobileNav(true);
+    });
+  }
+
+  /* Nav dropdown ("Follow Us") */
+  var navDropdowns = document.querySelectorAll(".nav-dropdown");
+  if (navDropdowns.length) {
+    var closeDropdown = function (dd) {
+      var panel = dd.querySelector("[data-dropdown-panel]");
+      var btn = dd.querySelector("[data-dropdown-toggle]");
+      if (panel) panel.classList.remove("is-open");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    };
+    navDropdowns.forEach(function (dd) {
+      var btn = dd.querySelector("[data-dropdown-toggle]");
+      var panel = dd.querySelector("[data-dropdown-panel]");
+      if (!btn || !panel) return;
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = panel.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        navDropdowns.forEach(function (other) { if (other !== dd) closeDropdown(other); });
       });
+    });
+    document.addEventListener("click", function (e) {
+      navDropdowns.forEach(function (dd) { if (!dd.contains(e.target)) closeDropdown(dd); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") navDropdowns.forEach(closeDropdown);
     });
   }
 
@@ -26,7 +74,10 @@
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         var target = tab.getAttribute("data-target");
-        tabs.forEach(function (t) { t.classList.toggle("is-active", t === tab); });
+        tabs.forEach(function (t) {
+          t.classList.toggle("is-active", t === tab);
+          t.setAttribute("aria-pressed", t === tab ? "true" : "false");
+        });
         panels.forEach(function (p) { p.classList.toggle("is-active", p.id === target); });
         history.replaceState(null, "", "#" + target);
       });
@@ -133,6 +184,7 @@
     });
 
     updateHoursStatus(lang);
+    if (toggle) updateNavToggleLabel(toggle.getAttribute("aria-expanded") === "true");
   }
 
   var langToggles = document.querySelectorAll("[data-lang-toggle]");
@@ -145,7 +197,7 @@
         applyLang(next);
       });
     });
-    applyLang(getStoredLang() || "en");
+    applyLang(getStoredLang() || document.documentElement.getAttribute("lang") || "en");
   } else {
     // No toggle on this page (shouldn't happen, but keep hours text correct)
     updateHoursStatus(document.documentElement.getAttribute("lang") || "en");

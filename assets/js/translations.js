@@ -20,9 +20,11 @@ window.QC_TRANSLATIONS = {
     "nav.menu": "Menu",
     "nav.catering": "Food Truck",
     "nav.location": "Location & Hours",
+    "nav.follow": "Follow Us",
     "header.order": "Order Online",
     "header.catering": "Catering Made Easy",
     "navtoggle.aria_open": "Open menu",
+    "navtoggle.aria_close": "Close menu",
     "mobile.call": "Call 480-474-4954",
     "footer.tagline": "Authentic Venezuelan food in downtown Mesa, AZ: restaurant, food truck, and catering.",
     "footer.explore": "Explore",
@@ -33,9 +35,9 @@ window.QC_TRANSLATIONS = {
     "mab.call": "Call",
 
     /* ---------- index.html ---------- */
-    "home.meta_title": "Que Chevere: Authentic Venezuelan Restaurant & Food Truck in Mesa, AZ",
-    "home.meta_desc": "Que Chevere serves scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo in downtown Mesa, AZ. Dine in, order online, or catch the food truck. 142 W Main St, Mesa, AZ 85201.",
-    "home.og_title": "Que Chevere: Authentic Venezuelan Restaurant & Food Truck in Mesa, AZ",
+    "home.meta_title": "Que Chevere: Venezuelan Restaurant & Food Truck in Mesa, AZ",
+    "home.meta_desc": "Que Chevere serves scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo in Mesa, AZ. Dine in, order online, or catch the food truck.",
+    "home.og_title": "Que Chevere: Venezuelan Restaurant & Food Truck in Mesa, AZ",
     "home.og_desc": "Scratch-made Venezuelan arepas, cachapas, tequeños, and pabellón criollo. Dine in, order online, or catch the food truck around the Valley.",
     "home.hero_title": "Real Venezuelan cooking, made to order.",
     "home.hero_sub": "Corn arepas, cachapas, tequeños, and pabellón criollo, cooked fresh at 142 W Main St, plus our food truck rolling around the Valley.",
@@ -88,6 +90,7 @@ window.QC_TRANSLATIONS = {
     "home.catering_details_btn": "Food Truck Details",
 
     "home.location_heading": "Location & hours",
+    "home.hours_caption": "Que Chevere weekly hours",
     "home.day_mon": "Monday",
     "home.day_tue": "Tuesday",
     "home.day_wed": "Wednesday",
@@ -104,7 +107,7 @@ window.QC_TRANSLATIONS = {
     /* ---------- menu.html ---------- */
     "menu.meta_title": "Menu: Que Chevere Venezuelan Restaurant & Food Truck, Mesa AZ",
     "menu.meta_desc": "Full menu for Que Chevere in Mesa, AZ: arepas, cachapas, tequeños, empanadas, patacones, and more. Restaurant and food truck menus, with prices.",
-    "menu.hero_h1": "Arepas, cachapas, and everything Que Chevere",
+    "menu.hero_h1": "Our menu: arepas, cachapas, and everything Que Chevere",
     "menu.hero_p": "Every item below is served fresh to order. Restaurant and food truck menus differ slightly. Pick your tab.",
     "menu.tab_restaurant": "Restaurant Menu",
     "menu.tab_foodtruck": "Food Truck Menu",
@@ -172,11 +175,12 @@ window.QC_TRANSLATIONS = {
 
     "menu.ready_h": "Ready to order?",
     "menu.ready_p": "Order online for pickup, or call the restaurant directly.",
+    "menu.ready_event_html": "Planning an event? See our <a href=\"platters.html\" style=\"color:var(--white); text-decoration:underline;\">catering platters</a> or <a href=\"catering.html\" style=\"color:var(--white); text-decoration:underline;\">book the food truck</a>.",
 
     /* ---------- catering.html ---------- */
     "catering.meta_title": "Catering & Food Truck Booking: Que Chevere, Mesa AZ",
     "catering.meta_desc": "Book Que Chevere for catering or the food truck. $1,000 per event, two weeks' notice. Call 480-474-4954 to confirm your date.",
-    "catering.hero_h1": "Bring Que Chevere to your event",
+    "catering.hero_h1": "Bring Que Chevere catering or the food truck to your event",
     "catering.hero_p": "From office lunches to weddings, we bring arepas, tequeños, and patacones to the table, straight from the truck.",
 
     "catering.basics_eyebrow": "The Basics",
@@ -213,7 +217,7 @@ window.QC_TRANSLATIONS = {
     /* ---------- platters.html ---------- */
     "platters.meta_title": "Catering Platters: Que Chevere, Mesa AZ",
     "platters.meta_desc": "Order Que Chevere catering platters for pickup or in-house delivery: tequeños, empanadas, arepas, and a build-your-own arepa bar. 24 hours' notice, please.",
-    "platters.hero_h1": "Platters made fresh, ready to share",
+    "platters.hero_h1": "Catering platters, made fresh and ready to share",
     "platters.hero_p": "Tequeños, empanadas, arepas, and more, made in-house and ready for pickup or delivery. Order at least 24 hours ahead.",
 
     "platters.basics_eyebrow": "The Basics",
@@ -284,9 +288,11 @@ window.QC_TRANSLATIONS = {
     "nav.menu": "Menú",
     "nav.catering": "Food Truck",
     "nav.location": "Ubicación y Horario",
+    "nav.follow": "Síguenos",
     "header.order": "Ordenar en Línea",
     "header.catering": "Catering Fácil",
     "navtoggle.aria_open": "Abrir menú",
+    "navtoggle.aria_close": "Cerrar menú",
     "mobile.call": "Llamar al 480-474-4954",
     "footer.tagline": "Auténtica comida venezolana en el centro de Mesa, AZ: restaurante, food truck y catering.",
     "footer.explore": "Explorar",
@@ -352,6 +358,7 @@ window.QC_TRANSLATIONS = {
     "home.catering_details_btn": "Detalles del Food Truck",
 
     "home.location_heading": "Ubicación y horario",
+    "home.hours_caption": "Horario semanal de Que Chevere",
     "home.day_mon": "Lunes",
     "home.day_tue": "Martes",
     "home.day_wed": "Miércoles",
@@ -436,6 +443,7 @@ window.QC_TRANSLATIONS = {
 
     "menu.ready_h": "¿Listo para pedir?",
     "menu.ready_p": "Pide en línea para recoger, o llama directamente al restaurante.",
+    "menu.ready_event_html": "¿Planeando un evento? Mira nuestras <a href=\"platters.html\" style=\"color:var(--white); text-decoration:underline;\">bandejas para catering</a> o <a href=\"catering.html\" style=\"color:var(--white); text-decoration:underline;\">reserva el food truck</a>.",
 
     /* ---------- catering.html ---------- */
     "catering.meta_title": "Reservas de Catering y Food Truck: Que Chevere, Mesa AZ",
