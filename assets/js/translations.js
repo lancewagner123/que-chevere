@@ -175,12 +175,12 @@ window.QC_TRANSLATIONS = {
 
     "menu.ready_h": "Ready to order?",
     "menu.ready_p": "Order online for pickup, or call the restaurant directly.",
-    "menu.ready_event_html": "Planning an event? See our <a href=\"platters.html\" style=\"color:var(--white); text-decoration:underline;\">catering platters</a> or <a href=\"catering.html\" style=\"color:var(--white); text-decoration:underline;\">book the food truck</a>.",
+    "menu.ready_event_html": "See our <a href=\"platters.html\" style=\"color:var(--white); text-decoration:underline;\">catering platters</a> or <a href=\"catering.html\" style=\"color:var(--white); text-decoration:underline;\">book the food truck</a> for your next event.",
 
     /* ---------- catering.html ---------- */
     "catering.meta_title": "Catering & Food Truck Booking: Que Chevere, Mesa AZ",
     "catering.meta_desc": "Book Que Chevere for catering or the food truck. $1,000 per event, two weeks' notice. Call 480-474-4954 to confirm your date.",
-    "catering.hero_h1": "Bring Que Chevere catering or the food truck to your event",
+    "catering.hero_h1": "Bring the Que Chevere food truck or catering to your event",
     "catering.hero_p": "From office lunches to weddings, we bring arepas, tequeños, and patacones to the table, straight from the truck.",
 
     "catering.basics_eyebrow": "The Basics",

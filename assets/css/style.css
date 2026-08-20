@@ -347,16 +347,21 @@ p.section-lede {
   position: static;
   transform: none;
   opacity: 1;
-  visibility: visible;
+  visibility: hidden;
   box-shadow: none;
   padding: 0;
   min-width: 0;
   gap: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease;
+  transition: max-height 0.2s ease, visibility 0s linear 0.2s;
 }
-.mobile-nav .nav-dropdown__panel.is-open { max-height: 220px; padding: 4px 0 10px; }
+.mobile-nav .nav-dropdown__panel.is-open {
+  visibility: visible;
+  max-height: 220px;
+  padding: 4px 0 10px;
+  transition: max-height 0.2s ease, visibility 0s linear 0s;
+}
 .mobile-nav .nav-dropdown__panel a { padding: 10px 6px; font-size: 1.05rem; }
 @media (min-width: 900px) { .mobile-nav { display: none; } }
 
@@ -783,7 +788,7 @@ body.has-mobile-bar { padding-bottom: 60px; }
 .menu-line__addon { margin-top: 5px; font-size: 0.85rem; color: var(--blue); font-weight: 600; }
 .menu-category-note {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--ink-soft);
   background: var(--paper-dim);
   padding: 10px 12px;
   border-radius: 8px;
