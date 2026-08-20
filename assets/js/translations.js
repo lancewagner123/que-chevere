@@ -18,15 +18,16 @@ window.QC_TRANSLATIONS = {
     /* ---------- shared: header / nav / footer / mobile bar ---------- */
     "nav.home": "Home",
     "nav.menu": "Menu",
-    "nav.catering": "Catering & Food Truck",
+    "nav.catering": "Food Truck",
     "nav.location": "Location & Hours",
     "header.order": "Order Online",
-    "header.call_label": "480-474-4954",
+    "header.catering": "Catering",
     "navtoggle.aria_open": "Open menu",
     "mobile.call": "Call 480-474-4954",
     "footer.tagline": "Authentic Venezuelan food in downtown Mesa, AZ — restaurant, food truck, and catering.",
     "footer.explore": "Explore",
     "footer.full_menu": "Full Menu",
+    "footer.catering_platters": "Catering Platters",
     "footer.visit": "Visit",
     "footer.rights": "All rights reserved.",
     "mab.call": "Call",
@@ -117,7 +118,6 @@ window.QC_TRANSLATIONS = {
     /* ---------- menu.html ---------- */
     "menu.meta_title": "Menu — Que Chevere Venezuelan Restaurant & Food Truck, Mesa AZ",
     "menu.meta_desc": "Full menu for Que Chevere in Mesa, AZ: arepas, cachapas, tequeños, empanadas, patacones, and more. Restaurant and food truck menus, with prices.",
-    "menu.hero_eyebrow": "Menu",
     "menu.hero_h1": "Arepas, cachapas, and everything Que Chevere",
     "menu.hero_p": "Every item below is served fresh to order. Restaurant and food truck menus differ slightly — pick your tab.",
     "menu.tab_restaurant": "Restaurant Menu",
@@ -190,7 +190,6 @@ window.QC_TRANSLATIONS = {
     /* ---------- catering.html ---------- */
     "catering.meta_title": "Catering & Food Truck Booking — Que Chevere, Mesa AZ",
     "catering.meta_desc": "Book Que Chevere for catering or the food truck. $1,000 minimum, two weeks' notice. Call 480-474-4954 to confirm your date.",
-    "catering.hero_eyebrow": "Catering & Food Truck",
     "catering.hero_h1": "Bring Que Chevere to your event",
     "catering.hero_p": "From office lunches to weddings, we bring arepas, tequeños, and patacones to the table — either catered or straight from the truck.",
 
@@ -203,6 +202,7 @@ window.QC_TRANSLATIONS = {
     "catering.fact3_num": "Call first",
     "catering.fact3_h": "Schedule varies",
     "catering.fact3_p": "Our availability changes date to date — call to confirm before you finalize plans.",
+    "catering.crosslink_html": "Just need smaller trays for pickup or delivery? See our <a href=\"platters.html\" style=\"color:var(--red); font-weight:700;\">Catering Platters →</a>",
 
     "catering.how_eyebrow": "How It Works",
     "catering.how_h": "Booking is simple — no online checkout, just a conversation",
@@ -224,22 +224,92 @@ window.QC_TRANSLATIONS = {
     "catering.talk_eyebrow": "Ready to Talk?",
     "catering.talk_h": "Let's plan your event",
     "catering.talk_p": "Call or email with your date, headcount, and what you're picturing — we'll confirm availability from there.",
-    "catering.email_us_btn": "Email Us"
+    "catering.email_us_btn": "Email Us",
+
+    /* ---------- platters.html ---------- */
+    "platters.meta_title": "Catering Platters — Que Chevere, Mesa AZ",
+    "platters.meta_desc": "Order Que Chevere catering platters for pickup or in-house delivery — tequeños, empanadas, arepas, and a build-your-own arepa bar. 24 hours' notice, please.",
+    "platters.hero_h1": "Platters made fresh, ready to share",
+    "platters.hero_p": "Tequeños, empanadas, arepas, and more, made in-house and ready for pickup or delivery. Order at least 24 hours ahead.",
+
+    "platters.basics_eyebrow": "The Basics",
+    "platters.basics_h": "What to know before you order",
+    "platters.fact1_num": "24 hrs",
+    "platters.fact1_h": "Advance notice",
+    "platters.fact1_p": "Please place platter orders at least 24 hours before you need them.",
+    "platters.fact2_num": "Pickup",
+    "platters.fact2_h": "Free pickup",
+    "platters.fact2_p": "Pick up your order at 142 W Main St, Mesa — no delivery fee.",
+    "platters.fact3_num": "Varies",
+    "platters.fact3_h": "In-house delivery",
+    "platters.fact3_p": "We deliver it ourselves — the fee depends on how far you are from the restaurant.",
+    "platters.crosslink_html": "Planning a bigger event, or want the food truck instead? <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">See our Food Truck →</a>",
+
+    "platters.menu_eyebrow": "The Platters",
+    "platters.menu_h": "Built to share, made to order",
+    "platters.menu_p": "Every platter is prepared fresh for your pickup or delivery time. Prices shown are plus tax.",
+
+    "platters.big_feeds": "Feeds approx. 12",
+    "platters.big_item1": "24 Tequeños",
+    "platters.big_item2": "24 Mini Empanadas",
+    "platters.big_item3": "30 Mini Arepas",
+
+    "platters.medium_feeds": "Feeds approx. 12",
+    "platters.medium_item1": "15 Tequeños",
+    "platters.medium_item2": "15 Mini Empanadas",
+    "platters.medium_item3": "15 Mini Cheese Cachapas",
+
+    "platters.small_feeds": "Feeds approx. 10",
+    "platters.small_item1": "24 Tequeños",
+    "platters.small_item2": "24 Mini Empanadas",
+
+    "platters.mini_feeds": "Feeds approx. 8",
+    "platters.mini_item1": "16 Tequeños",
+    "platters.mini_item2": "16 Mini Empanadas",
+    "platters.mini_item3": "25 Mini Arepas",
+
+    "platters.arepabar_tag": "Build Your Own",
+    "platters.arepabar_feeds": "Feeds approx. 10",
+    "platters.arepabar_item1": "10 Plain Arepas",
+    "platters.arepabar_item2": "16 oz Shredded Beef",
+    "platters.arepabar_item3": "16 oz Shredded Chicken",
+    "platters.arepabar_item4": "8 oz Black Beans",
+    "platters.arepabar_item5": "8 oz White Cheese",
+    "platters.arepabar_item6": "8 oz Guacamole",
+    "platters.arepabar_item7": "8 oz Cilantro Sauce",
+    "platters.arepabar_item8": "8 oz Guasacaca",
+
+    "platters.tax_note": "Prices do not include tax.",
+
+    "platters.how_eyebrow": "How It Works",
+    "platters.how_h": "Ordering is simple — call, email, or ask in-store",
+    "platters.step1_h": "Call or email at least 24 hours ahead",
+    "platters.step1_p_html": "Reach us at <a href=\"tel:+14804744954\" style=\"color:var(--red); font-weight:700;\">480-474-4954</a> or <a href=\"mailto:info@quechevereaz.com\" style=\"color:var(--red); font-weight:700;\">info@quechevereaz.com</a> with your platter choice and pickup or delivery details.",
+    "platters.step2_h": "Choose pickup or delivery",
+    "platters.step2_p": "Pickup at 142 W Main St is free. Delivery is in-house — the fee depends on your distance from the restaurant.",
+    "platters.step3_h": "We prep it fresh and get it to you",
+    "platters.step3_p": "Your platter is made to order and ready at the time you arrange with us.",
+
+    "platters.talk_eyebrow": "Ready to Order?",
+    "platters.talk_h": "Let's get your platter on the calendar",
+    "platters.talk_p": "Call or email with your platter choice, date, and pickup or delivery preference — remember, at least 24 hours' notice.",
+    "platters.email_us_btn": "Email Us"
   },
 
   es: {
     /* ---------- shared: header / nav / footer / mobile bar ---------- */
     "nav.home": "Inicio",
     "nav.menu": "Menú",
-    "nav.catering": "Catering y Food Truck",
+    "nav.catering": "Food Truck",
     "nav.location": "Ubicación y Horario",
     "header.order": "Ordenar en Línea",
-    "header.call_label": "480-474-4954",
+    "header.catering": "Catering",
     "navtoggle.aria_open": "Abrir menú",
     "mobile.call": "Llamar al 480-474-4954",
     "footer.tagline": "Auténtica comida venezolana en el centro de Mesa, AZ — restaurante, food truck y catering.",
     "footer.explore": "Explorar",
     "footer.full_menu": "Menú Completo",
+    "footer.catering_platters": "Bandejas de Catering",
     "footer.visit": "Visítanos",
     "footer.rights": "Todos los derechos reservados.",
     "mab.call": "Llamar",
@@ -330,7 +400,6 @@ window.QC_TRANSLATIONS = {
     /* ---------- menu.html ---------- */
     "menu.meta_title": "Menú — Restaurante y Food Truck Venezolano Que Chevere, Mesa AZ",
     "menu.meta_desc": "Menú completo de Que Chevere en Mesa, AZ: arepas, cachapas, tequeños, empanadas, patacones y más. Menú del restaurante y del food truck, con precios.",
-    "menu.hero_eyebrow": "Menú",
     "menu.hero_h1": "Arepas, cachapas y todo lo de Que Chevere",
     "menu.hero_p": "Cada plato se sirve fresco y al momento. El menú del restaurante y del food truck varían un poco — elige tu pestaña.",
     "menu.tab_restaurant": "Menú del Restaurante",
@@ -403,7 +472,6 @@ window.QC_TRANSLATIONS = {
     /* ---------- catering.html ---------- */
     "catering.meta_title": "Reservas de Catering y Food Truck — Que Chevere, Mesa AZ",
     "catering.meta_desc": "Reserva Que Chevere para catering o el food truck. Mínimo de $1,000, dos semanas de anticipación. Llama al 480-474-4954 para confirmar tu fecha.",
-    "catering.hero_eyebrow": "Catering y Food Truck",
     "catering.hero_h1": "Lleva Que Chevere a tu evento",
     "catering.hero_p": "Desde almuerzos de oficina hasta bodas, llevamos arepas, tequeños y patacones a la mesa — ya sea con catering o directo desde el camión.",
 
@@ -416,6 +484,7 @@ window.QC_TRANSLATIONS = {
     "catering.fact3_num": "Llama primero",
     "catering.fact3_h": "El horario varía",
     "catering.fact3_p": "Nuestra disponibilidad cambia según la fecha — llama para confirmar antes de finalizar tus planes.",
+    "catering.crosslink_html": "¿Solo necesitas bandejas más pequeñas para recoger o entregar? Mira nuestras <a href=\"platters.html\" style=\"color:var(--red); font-weight:700;\">Bandejas de Catering →</a>",
 
     "catering.how_eyebrow": "Cómo Funciona",
     "catering.how_h": "Reservar es simple — sin pago en línea, solo una conversación",
@@ -437,6 +506,75 @@ window.QC_TRANSLATIONS = {
     "catering.talk_eyebrow": "¿Listos para Hablar?",
     "catering.talk_h": "Planifiquemos tu evento",
     "catering.talk_p": "Llama o escribe con tu fecha, número de invitados, y lo que tienes en mente — confirmaremos disponibilidad a partir de ahí.",
-    "catering.email_us_btn": "Escríbenos"
+    "catering.email_us_btn": "Escríbenos",
+
+    /* ---------- platters.html ---------- */
+    "platters.meta_title": "Bandejas de Catering — Que Chevere, Mesa AZ",
+    "platters.meta_desc": "Pide bandejas de catering de Que Chevere para recoger o con entrega propia — tequeños, empanadas, arepas, y una barra de arepas para armar. Con 24 horas de anticipación.",
+    "platters.hero_h1": "Bandejas frescas, listas para compartir",
+    "platters.hero_p": "Tequeños, empanadas, arepas y más, preparados en casa y listos para recoger o entregar. Ordena con al menos 24 horas de anticipación.",
+
+    "platters.basics_eyebrow": "Lo Básico",
+    "platters.basics_h": "Lo que debes saber antes de ordenar",
+    "platters.fact1_num": "24 horas",
+    "platters.fact1_h": "Anticipación",
+    "platters.fact1_p": "Por favor ordena tus bandejas con al menos 24 horas de anticipación.",
+    "platters.fact2_num": "Recoger",
+    "platters.fact2_h": "Recogida gratis",
+    "platters.fact2_p": "Recoge tu pedido en 142 W Main St, Mesa — sin costo de entrega.",
+    "platters.fact3_num": "Varía",
+    "platters.fact3_h": "Entrega propia",
+    "platters.fact3_p": "Nosotros mismos hacemos la entrega — el costo depende de qué tan lejos estés del restaurante.",
+    "platters.crosslink_html": "¿Planeas un evento más grande, o prefieres el food truck? <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">Ver nuestro Food Truck →</a>",
+
+    "platters.menu_eyebrow": "Las Bandejas",
+    "platters.menu_h": "Hechas para compartir, preparadas al pedido",
+    "platters.menu_p": "Cada bandeja se prepara fresca para tu hora de recogida o entrega. Los precios no incluyen impuestos.",
+
+    "platters.big_feeds": "Rinde para aprox. 12 personas",
+    "platters.big_item1": "24 Tequeños",
+    "platters.big_item2": "24 Mini Empanadas",
+    "platters.big_item3": "30 Mini Arepas",
+
+    "platters.medium_feeds": "Rinde para aprox. 12 personas",
+    "platters.medium_item1": "15 Tequeños",
+    "platters.medium_item2": "15 Mini Empanadas",
+    "platters.medium_item3": "15 Mini Cachapas de Queso",
+
+    "platters.small_feeds": "Rinde para aprox. 10 personas",
+    "platters.small_item1": "24 Tequeños",
+    "platters.small_item2": "24 Mini Empanadas",
+
+    "platters.mini_feeds": "Rinde para aprox. 8 personas",
+    "platters.mini_item1": "16 Tequeños",
+    "platters.mini_item2": "16 Mini Empanadas",
+    "platters.mini_item3": "25 Mini Arepas",
+
+    "platters.arepabar_tag": "Arma la Tuya",
+    "platters.arepabar_feeds": "Rinde para aprox. 10 personas",
+    "platters.arepabar_item1": "10 Arepas Sencillas",
+    "platters.arepabar_item2": "16 oz de Carne Mechada",
+    "platters.arepabar_item3": "16 oz de Pollo Mechado",
+    "platters.arepabar_item4": "8 oz de Caraotas Negras",
+    "platters.arepabar_item5": "8 oz de Queso Blanco",
+    "platters.arepabar_item6": "8 oz de Guacamole",
+    "platters.arepabar_item7": "8 oz de Salsa de Cilantro",
+    "platters.arepabar_item8": "8 oz de Guasacaca",
+
+    "platters.tax_note": "Los precios no incluyen impuestos.",
+
+    "platters.how_eyebrow": "Cómo Funciona",
+    "platters.how_h": "Ordenar es simple — llama, escribe, o pregunta en el local",
+    "platters.step1_h": "Llama o escribe con al menos 24 horas de anticipación",
+    "platters.step1_p_html": "Contáctanos al <a href=\"tel:+14804744954\" style=\"color:var(--red); font-weight:700;\">480-474-4954</a> o a <a href=\"mailto:info@quechevereaz.com\" style=\"color:var(--red); font-weight:700;\">info@quechevereaz.com</a> con tu bandeja elegida y los detalles de recogida o entrega.",
+    "platters.step2_h": "Elige recoger o que te lo llevemos",
+    "platters.step2_p": "Recoger en 142 W Main St es gratis. La entrega es propia — el costo depende de qué tan lejos estés del restaurante.",
+    "platters.step3_h": "Lo preparamos fresco y te lo llevamos",
+    "platters.step3_p": "Tu bandeja se prepara al pedido y está lista a la hora que acordemos contigo.",
+
+    "platters.talk_eyebrow": "¿Listo para Ordenar?",
+    "platters.talk_h": "Agendemos tu bandeja",
+    "platters.talk_p": "Llama o escribe con tu bandeja elegida, la fecha, y si prefieres recoger o entrega — recuerda, con al menos 24 horas de anticipación.",
+    "platters.email_us_btn": "Escríbenos"
   }
 };
