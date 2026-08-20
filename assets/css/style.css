@@ -132,11 +132,6 @@ p.section-lede {
 .btn:active { transform: translateY(1px) scale(0.99); }
 .btn-primary { background: var(--red); color: var(--white); box-shadow: var(--shadow-sm); }
 .btn-primary:hover { background: var(--red-dark); box-shadow: var(--shadow-md); }
-/* Order Online buttons specifically (not the .btn-primary Call buttons reused
-   on catering.html/platters.html) — scoped via the shared data-i18n key rather
-   than a new class, since every Order Online button already carries it. */
-.btn-primary[data-i18n="header.order"] { background: var(--white); color: var(--ink); }
-.btn-primary[data-i18n="header.order"]:hover { background: var(--white); box-shadow: var(--shadow-md); }
 .btn-light { background: var(--white); color: var(--ink); box-shadow: var(--shadow-sm); }
 .btn-light:hover { box-shadow: var(--shadow-md); }
 .btn-outline { background: transparent; border-color: currentColor; color: var(--white); }
@@ -145,8 +140,8 @@ p.section-lede {
 .btn-outline-dark:hover { background: var(--ink); color: var(--white); }
 .btn-blue { background: var(--blue); color: var(--white); box-shadow: var(--shadow-sm); }
 .btn-blue:hover { background: var(--blue-dark); }
-.btn-catering { background: var(--white); color: var(--ink); box-shadow: var(--shadow-sm); }
-.btn-catering:hover { box-shadow: var(--shadow-md); }
+.btn-catering { background: var(--red); color: var(--white); box-shadow: var(--shadow-sm); }
+.btn-catering:hover { background: var(--red-dark); box-shadow: var(--shadow-md); }
 .btn-sm { padding: 11px 18px; font-size: 0.9rem; }
 .btn-block { width: 100%; }
 
