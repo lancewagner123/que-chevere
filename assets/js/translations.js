@@ -58,7 +58,7 @@ window.QC_TRANSLATIONS = {
     "home.story_lede": "Maria Fernanda brought her family's Venezuelan cooking to Arizona from Barquisimeto, Venezuela. Orvid tasted it and knew it needed to reach more people. Que Chevere has run as a restaurant and a food truck ever since: same recipes, same kitchen, two ways to get to you.",
     "home.fact1_html": "<strong>Dine in or takeout</strong> at 142 W Main St, Mesa, open Wed-Sat and Sunday.",
     "home.fact2_html": "<strong>Food truck menu</strong> of empanadas, arepas, and bowls. Schedule varies, so follow our socials for where we'll be.",
-    "home.fact3_html": "<strong>Catering for groups</strong>: $1,000 per event, two weeks' notice. <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">See catering details →</a>",
+    "home.fact3_html": "<strong>Food truck &amp; event bookings</strong>: $1,000 per event, two weeks' notice. <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">See food truck details →</a>",
 
     "home.team_heading": "The people behind the counter and the truck",
     "home.team_lede": "Same crew, same recipes, two locations: the Main Street kitchen and the truck you'll spot around the Valley.",
@@ -322,7 +322,7 @@ window.QC_TRANSLATIONS = {
     "home.story_lede": "Maria Fernanda trajo la cocina venezolana de su familia a Arizona desde Barquisimeto, Venezuela. Orvid la probó y supo que tenía que llegar a más gente. Desde entonces, Que Chevere ha funcionado como restaurante y food truck: las mismas recetas, la misma cocina, dos formas de llegar hasta ti.",
     "home.fact1_html": "<strong>Come en el local o para llevar</strong> en 142 W Main St, Mesa, abierto de miércoles a sábado y domingo.",
     "home.fact2_html": "<strong>Menú del food truck</strong> con empanadas, arepas y bowls. El horario varía, así que síguenos en redes para saber dónde estaremos.",
-    "home.fact3_html": "<strong>Catering para grupos</strong>: $1,000 por evento, dos semanas de anticipación. <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">Ver detalles de catering →</a>",
+    "home.fact3_html": "<strong>Food truck y reservas de eventos</strong>: $1,000 por evento, dos semanas de anticipación. <a href=\"catering.html\" style=\"color:var(--red); font-weight:700;\">Ver detalles del food truck →</a>",
 
     "home.team_heading": "La gente detrás del mostrador y del camión",
     "home.team_lede": "El mismo equipo, las mismas recetas, dos lugares: la cocina de Main Street y el camión que verás por el Valle.",
