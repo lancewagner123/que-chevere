@@ -40,8 +40,6 @@ window.QC_TRANSLATIONS = {
     "home.hero_eyebrow": "Downtown Mesa, AZ",
     "home.hero_title": "Real Venezuelan cooking, made to order.",
     "home.hero_sub": "Corn arepas, cachapas, tequeños, and pabellón criollo — cooked fresh at 142 W Main St, plus our food truck rolling around the Valley.",
-    "home.hero_cta_menu": "View Menu",
-    "home.hero_cta_call": "Call to Order",
     "home.hero_address_label": "142 W Main St, Mesa, AZ 85201",
 
     "home.favs_eyebrow": "From the Menu",
@@ -315,8 +313,6 @@ window.QC_TRANSLATIONS = {
     "home.hero_eyebrow": "Centro de Mesa, AZ",
     "home.hero_title": "Auténtica cocina venezolana, hecha al momento.",
     "home.hero_sub": "Arepas de maíz, cachapas, tequeños y pabellón criollo — cocinados frescos en 142 W Main St, además de nuestro food truck rodando por el Valle.",
-    "home.hero_cta_menu": "Ver Menú",
-    "home.hero_cta_call": "Llamar para Pedir",
     "home.hero_address_label": "142 W Main St, Mesa, AZ 85201",
 
     "home.favs_eyebrow": "Del Menú",
